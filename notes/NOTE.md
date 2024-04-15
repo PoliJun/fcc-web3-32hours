@@ -442,6 +442,8 @@ numbers.push(4);
 Declaration:
 
 ```solidity
+Person[] public people;
+
 struct Person {
     uint256 favoriteNumber;
     string name;
@@ -458,10 +460,32 @@ Just showing index in Remix call function. `0: 2; 1: Andres`
 
 Input index to get the value in an array.
 
+#### Mappings
+
+```solidity
+mapping(string => uint256) public nameToFavoriteNumber;
+```
+
+Add Person function:
+
+```solidity
+function addPerson(string memory _name, uint256 _favoriteNumber) public {
+    people.push(Person(_favoriteNumber, _name));
+    nameToFavoriteNumber[_name] = _favoriteNumber;
+}
+```
+
 ### `memory` and `storage`
 
--   **memory**: temporary place to store data
--   **storage**: permanent place to store data
+-   **calldata**: temporary place to store data, can't be modified
+-   **memory**: temporary place to store data, can be modified
+-   **storage**: permanent place to store data, can be modified
+
+Memory is used to store temporary data that is needed during the execution of a function. Calldata is used to store function arguments that are passed in from an external caller. Storage is used to store data permanently on the blockchain.
+
+**calldata**: a special data location that contains function arguments, only available for external function call parameters. It is read-only, can't be modified, and is cheaper to use than `memory`.
+
+When defining variables in Solidity, you must specify a data location. If you receive a "TypeError: Data location must be 'storage', 'memory' or 'calldata' for variable, but none was given" error message, it means that you have not specified a data location for your variable
 
 Example:
 
@@ -491,3 +515,55 @@ function addPerson(string memory _name, uint256 _favoriteNumber) public {
     people.push(newPerson);
 }
 ```
+
+### Basic solidity errors and warnings
+
+#### Errors
+
+-   **require**: check a condition, if false, it will throw an error and revert the transaction
+-   **assert**: check a condition, if false, it will throw an error and revert the transaction
+-   **revert**: revert the transaction
+
+### EVM Overview
+
+EVM stands for Ethereum Virtual Machine. It is the runtime environment for smart contracts in Ethereum. The EVM is responsible for executing smart contracts and processing transactions on the Ethereum network. Here's an overview of the EVM:
+
+-   Access and store information in six places:
+
+            1. Stack
+            2. Memory
+            3. Storage
+            4. Calldata
+            5. Code
+            6. Logs
+
+            But we cannot say that a variable is stack, code or logs.
+
+    > For code:
+    >
+    > ```solidity
+    > function addPerson(string memory _name, uint256 _favoriteNumber) public {
+    > Person memory newPerson = Person(_favoriteNumber, _name); // Shorthand
+    > people.push(newPerson);
+    > }
+    > ```
+    >
+    > The `uint256 _favoriteNumber` cannot be modified by memory. Because it is not a memory variable. It is a stack variable.
+    >
+    > Data location can only be specified for array, struct, or mapping types. As for `string`, it is a dynamic array.
+
+### Deploying your first smart contract
+
+Environment: Injected Web3
+
+-   **Injected Web3**: This environment uses the Web3 provider injected by your browser (e.g., MetaMask) to interact with the Ethereum network. It allows you to deploy and interact with smart contracts using your Ethereum account.(MetaMask)
+
+Call a Transaction:
+
+MetaMask will popup to ask for permission to sign the transaction.(Confirm the transaction)
+
+### The EVM & A Recap of Lesson 2
+
+-   **EVM**: Ethereum Virtual Machine
+-   Compiled down to EVM
+-   EVM Compatible: Binance Smart Chain, Polygon, etc.
