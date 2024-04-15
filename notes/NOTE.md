@@ -288,3 +288,192 @@ Layer 1 and Layer 2 are terms used in blockchain technology to describe differen
 -   Layer 1 focuses on the core blockchain protocol layer, including consensus, transaction processing, and smart contract execution.
 -   Layer 2 focuses on scaling solutions and protocols built on top of Layer 1 to improve transaction throughput and efficiency.
 -   Layer 1 blockchains provide the foundation for Layer 2 solutions to enhance scalability and performance.
+
+## Lesson 2: Welcome to Remix! Simple Storage
+
+### Solidity
+
+#### Syntax
+
+**version pragma**
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0; // upper bound
+```
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 <0.9.0; // lower bound
+```
+
+**contract**
+
+```solidity
+contract SimpleStorage {
+    uint256 favoriteNumber = 5;
+}
+```
+
+#### Basic Solidity Types
+
+-   **uint**: unsigned integer, positive integer
+-   **int**: signed integer, positive or negative integer
+-   **bool**: boolean
+-   **address**: Ethereum address
+-   **string**: UTF-8 string
+-   **bytes**: raw bytes
+-   **fixed**: fixed-point number
+-   **ufixed**: unsigned fixed-point number
+
+Bytes Explanation:
+
+-   **bytes1**: 1 byte
+-   **bytes2**: 2 bytes
+-   **bytes3**: 3 bytes
+
+Example:
+
+```solidity
+bytes32 myBytes; // Max size is 32 bytes
+```
+
+#### Variables
+
+Declare:
+
+```solidity
+uint256 favoriteNumber = 5;
+```
+
+or
+
+```solidity
+uint256 public favoriteNumber; // default value is 0, default visibility is private
+```
+
+#### Functions
+
+```solidity
+function store(uint256 _favoriteNumber) public {
+    favoriteNumber = _favoriteNumber;
+}
+```
+
+Explain:
+
+-   **function**: keyword
+-   **store**: function name
+-   **uint256**: parameter type
+-   **\_favoriteNumber**: parameter name
+-   **public**: visibility
+
+#### Visibility
+
+-   **public**: anyone can call this function
+-   **private**: only this contract can call this function
+-   **internal**: only this contract and contracts deriving from it can call this function
+-   **external**: only other contracts can call this function
+
+#### Key Words
+
+-   **view**: read-only function, does not modify state, does not cost gas
+-   **pure**: function does not read or modify state, does not cost gas
+
+Explain State: State is the data stored in the contract.
+
+### Remix
+
+deployed contract has an address.
+
+Information in console.
+
+Call function in the deployed contract.
+Input parameters.
+
+Click variables to see the value.
+Public variables creates a getter function.
+Private variables do not create a getter function.
+
+### A quick gas example
+
+```solidity
+function store(uint256 _favoriteNumber) public {
+    favoriteNumber = _favoriteNumber;
+}
+```
+
+Explain gas: The fee you pay to execute a transaction on the Ethereum network. The more complex the transaction, the more gas you need to pay.
+
+### Basic Solidity Arrays & Structs
+
+#### Arrays
+
+```solidity
+uint256[] numbers;
+```
+
+**Declaration and initialization:**
+
+```solidity
+uint256[] numbers = [1, 2, 3];
+```
+
+or
+
+```solidity
+uint256[] public numbers;
+```
+
+or fixed size array:
+
+```solidity
+uint256[3] numbers;
+```
+
+**Push:**
+
+```solidity
+numbers.push(4);
+```
+
+#### Structs
+
+Declaration:
+
+```solidity
+struct Person {
+    uint256 favoriteNumber;
+    string name;
+}
+```
+
+Use:
+
+```solidity
+Person public person = Person({favoriteNumber: 2, name: "Andres"});
+```
+
+Just showing index in Remix call function. `0: 2; 1: Andres`
+
+Input index to get the value in an array.
+
+### `memory` and `storage`
+
+-   **memory**: temporary place to store data
+-   **storage**: permanent place to store data
+
+Example:
+
+```solidity
+uint256[] memory numbers = new uint256[](10);
+```
+
+If a parameter is modified by memory, it will not be modified in storage. Example:
+
+```solidity
+function addPerson(string memory _name, uint256 _favoriteNumber) public {
+    Person memory newPerson = Person({favoriteNumber:_favoriteNumber, name:_name});
+    people.push(newPerson);
+}
+```
