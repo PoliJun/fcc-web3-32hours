@@ -477,3 +477,17 @@ function addPerson(string memory _name, uint256 _favoriteNumber) public {
     people.push(newPerson);
 }
 ```
+
+Shorthand:
+
+```solidity
+struct Person {
+    uint256 favoriteNumber;
+    string name;
+}
+
+function addPerson(string memory _name, uint256 _favoriteNumber) public {
+    Person memory newPerson = Person(_favoriteNumber, _name); // Shorthand
+    people.push(newPerson);
+}
+```
