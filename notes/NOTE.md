@@ -570,3 +570,10 @@ MetaMask will popup to ask for permission to sign the transaction.(Confirm the t
 
 ## Lesson 3: Lesson 3: Remix Storage Factory
 
+### Importing Contracts
+
+```solidity
+import "./SimpleStorage.sol";
+```
+
+Composability: The ability to combine different components or systems to create new and more complex systems.
