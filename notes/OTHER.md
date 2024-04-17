@@ -27,3 +27,9 @@ git commit -m "Merged file from another branch"
 ```
 
 This will bring over the version of the file from the source branch into your current (target) branch.
+
+## EVM is decentralized
+
+Yes, the Ethereum Virtual Machine (EVM) operates in a decentralized manner. The EVM is the runtime environment for Ethereum, the decentralized, blockchain-based platform.
+
+Every operation that is executed inside the EVM is actually being executed by every node in the network. This is what makes Ethereum decentralized. If Ethereum was controlled by a single entity, it would be considered centralized. But since every node in the network is executing the same instructions, Ethereum maintains its decentralization.

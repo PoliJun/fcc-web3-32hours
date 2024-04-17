@@ -577,3 +577,40 @@ import "./SimpleStorage.sol";
 ```
 
 Composability: The ability to combine different components or systems to create new and more complex systems.
+
+### Notice version compatible
+
+Notice: The version of the imported contract should be compatible with the current contract.
+
+**Compatible versions of solidity:** `^0.8.0` means `>=0.8.0 <0.9.0`. It is not compatible with `0.9.0`.
+
+```solidity
+pragma solidity ^0.8.0;
+```
+
+Creating a new instance of a contract:
+
+```solidity
+SimpleStorage simpleStorage = new SimpleStorage();
+```
+
+### Interacting with other contracts
+
+```solidity
+
+
+function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) public {
+        // Address
+        // ABI
+        // SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).store(_simpleStorageNumber);
+        simpleStorageArray[_simpleStorageIndex].store(_simpleStorageNumber);
+}
+```
+
+### ABI
+
+ABI stands for Application Binary Interface. It is a standard way to interact with smart contracts in Ethereum. The ABI defines the functions and data structures of a smart contract, allowing external applications to interact with it. The ABI is used to encode and decode data when calling functions on a smart contract.
+
+---
+
+See Compile Details in Remix.
