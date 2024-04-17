@@ -568,7 +568,7 @@ MetaMask will popup to ask for permission to sign the transaction.(Confirm the t
 -   Compiled down to EVM
 -   EVM Compatible: Binance Smart Chain, Polygon, etc.
 
-## Lesson 3: Lesson 3: Remix Storage Factory
+## Lesson 3: Remix Storage Factory
 
 ### Importing Contracts
 
@@ -614,3 +614,35 @@ ABI stands for Application Binary Interface. It is a standard way to interact wi
 ---
 
 See Compile Details in Remix.
+
+### Inheritance & Overrides
+
+**Inheritance:** Inheritance is a feature of Solidity that allows you to create new contracts by deriving from existing contracts. The derived contract inherits the state variables and functions of the base contract, enabling code reuse and modularity.
+
+**Overrides:** The `override` keyword is used in Solidity to indicate that a function is overriding a function from a base contract. When a function is marked as `override`, it must match the function signature of the base function it is overriding.
+
+```solidity
+// in SimpleStorage.sol, virtual
+function store(uint256 _favoriteNumber) public virtual {
+        favoriteNumber = _favoriteNumber;
+    }
+```
+
+```solidity
+import "./SimpleStorage.sol";
+
+// Inheritance, is
+contract ExtraStorage is SimpleStorage {
+    // Override, override
+    function store(uint256 _favoriteNumber) public override {
+        favoriteNumber = _favoriteNumber + 5;
+    }
+}
+```
+
+Two key words:
+
+- virtual
+    > The `virtual` keyword is used in Solidity to indicate that a function can be overridden in derived contracts. When a function is marked as `virtual`, it can be overridden by functions in derived contracts.
+- override
+    > The `override` keyword is used in Solidity to indicate that a function is overriding a function from a base contract. When a function is marked as `override`, it must match the function signature of the base function it is overriding.
