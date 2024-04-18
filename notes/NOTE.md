@@ -778,3 +778,152 @@ Copilot:
 > ```
 >
 > This will return the price with 6 decimal places, which is the same scale as your token.
+
+### Review Interfaces, Github imports and math in solidity
+
+[Block and Transaction Properties](https://docs.soliditylang.org/en/v0.8.25/units-and-global-variables.html#block-and-transaction-properties)
+
+Block and Transaction Properties
+
+    blockhash(uint blockNumber) returns (bytes32): hash of the given block when blocknumber is one of the 256 most recent blocks; otherwise returns zero
+
+    blobhash(uint index) returns (bytes32): versioned hash of the index-th blob associated with the current transaction. A versioned hash consists of a single byte representing the version (currently 0x01), followed by the last 31 bytes of the SHA256 hash of the KZG commitment (EIP-4844).
+
+    block.basefee (uint): current block’s base fee (EIP-3198 and EIP-1559)
+
+    block.blobbasefee (uint): current block’s blob base fee (EIP-7516 and EIP-4844)
+
+    block.chainid (uint): current chain id
+
+    block.coinbase (address payable): current block miner’s address
+
+    block.difficulty (uint): current block difficulty (EVM < Paris). For other EVM versions it behaves as a deprecated alias for block.prevrandao (EIP-4399 )
+
+    block.gaslimit (uint): current block gaslimit
+
+    block.number (uint): current block number
+
+    block.prevrandao (uint): random number provided by the beacon chain (EVM >= Paris)
+
+    block.timestamp (uint): current block timestamp as seconds since unix epoch
+
+    gasleft() returns (uint256): remaining gas
+
+    msg.data (bytes calldata): complete calldata
+
+    msg.sender (address): sender of the message (current call)
+
+    msg.sig (bytes4): first four bytes of the calldata (i.e. function identifier)
+
+    msg.value (uint): number of wei sent with the message
+
+    tx.gasprice (uint): gas price of the transaction
+
+    tx.origin (address): sender of the transaction (full call chain)
+
+### Library
+
+**Library:** A library in Solidity is a collection of reusable functions and data structures that can be shared across multiple contracts. Libraries are similar to contracts but have some key differences:
+
+-   **No state:** Libraries cannot have state variables, and their functions are stateless. This means that libraries cannot store data between function calls or transactions.
+-   **Deployment:** Libraries are deployed once and shared across multiple contracts. When a contract uses a library, it references the library's address on the blockchain.
+-   **Cost:** Using libraries can reduce gas costs and deployment size by sharing code and avoiding duplication.
+
+Define a library:
+
+```solidity
+library SafeMath {
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = a + b;
+        require(c >= a, "SafeMath: addition overflow");
+        return c;
+    }
+}
+```
+
+Use a library:
+
+```solidity
+using SafeMath for uint256;
+
+uint256 result = a.add(b); // a is the first parameter, b is the second parameter
+```
+
+### SafeMath, Overflow Checking, and the "unchecked" Keyword
+
+**SafeMath:** SafeMath is a library in Solidity that provides arithmetic functions with overflow checking. It helps prevent integer overflow and underflow errors by checking the result of arithmetic operations against the maximum and minimum values of the data type.
+
+**Overflow Checking:** Overflow checking is the process of verifying that an arithmetic operation does not exceed the maximum or minimum value of the data type. In Solidity, integer overflow occurs when the result of an addition or multiplication operation exceeds the maximum value that can be represented by the data type. Underflow occurs when the result is less than the minimum value.
+
+**"unchecked" Keyword:** The "unchecked" keyword in Solidity is used to disable overflow and underflow checking for arithmetic operations. When the "unchecked" keyword is used, the compiler does not generate code to check for overflow or underflow, allowing the operation to proceed without validation. This can be useful in cases where the developer is confident that overflow or underflow will not occur.
+
+Why to use `unchecked`: The "unchecked" keyword can be used in situations where the developer is certain that overflow or underflow will not occur, or when the cost of checking for overflow is too high. However, using "unchecked" can introduce security vulnerabilities if the arithmetic operation does result in overflow or underflow.
+
+### Solidity Basics: Resetting an Array
+
+**Resetting an Array:** In Solidity, you can reset an array by setting its length to zero. This clears the array and removes all elements, effectively resetting it to an empty state. Here's an example of how to reset an array in Solidity:
+
+*from gemini*
+**Comparison of the Solidity Code Snippets for Resetting an Array:**
+
+**Snippet 1:**
+
+```solidity
+uint256[] public numbers;
+
+function resetArray() public {
+    numbers.length = 0;
+}
+```
+
+-   **Effect:** Resets the array by setting its length to 0.
+-   **Pros:**
+    -   Simpler and more concise syntax.
+    -   Efficient for small arrays.
+-   **Cons:**
+    -   Can be costly for large arrays, as it requires copying the entire array to a new location.
+    -   Leaves the storage space previously occupied by the array unused, which can lead to fragmentation and wasted gas on future storage operations.
+
+**Snippet 2:**
+
+```solidity
+uint256[] public numbers;
+
+function resetArray() public {
+    delete numbers;
+}
+```
+
+-   **Effect:** Resets the array by deleting its storage.
+-   **Pros:**
+    -   More efficient for large arrays, as it doesn't require copying the array.
+    -   Frees up the storage space previously occupied by the array, reducing fragmentation and saving gas on future storage operations.
+-   **Cons:**
+    -   Can be more expensive than `numbers.length = 0` for small arrays.
+    -   Resets the array to its initial state, meaning it will have a length of 0 and its elements will be uninitialized.
+
+**Snippet 3:**
+
+```solidity
+uint256[] public numbers;
+
+function resetArray() public {
+    numbers = new uint256[](0);
+}
+```
+
+-   **Effect:** Resets the array by creating a new array with a length of 0 and assigning it to the `numbers` variable.
+-   **Pros:**
+    -   Similar efficiency to `delete numbers` for large arrays.
+    -   Frees up the storage space previously occupied by the array, reducing fragmentation and saving gas on future storage operations.
+    -   Initializes the array to a known state with a length of 0.
+-   **Cons:**
+    -   Can be more expensive than `numbers.length = 0` for small arrays.
+    -   Requires more gas than `delete numbers` because it involves creating a new array.
+
+**Summary:**
+
+-   For small arrays, `numbers.length = 0` is generally the most efficient and cost-effective option.
+-   For large arrays, `delete numbers` or `numbers = new uint256[](0)` are better choices, as they free up storage space and can save gas on future storage operations.
+-   `numbers = new uint256[](0)` offers a balance of efficiency and initialization, but it comes with a slightly higher gas cost than `delete numbers`.
+-   The choice of which method to use depends on the specific requirements of your contract and the size of the array you're working with.
