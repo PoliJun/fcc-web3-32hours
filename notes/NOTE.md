@@ -947,3 +947,21 @@ Three ways to transfer ETH:
 -   **Transfer:** Automatically reverts the transaction if the transfer fails. Limited to 2300 gas, which may not be enough for complex operations.
 -   **Send:** Returns a boolean value indicating whether the transfer was successful. limited to 2300 gas, which may not be enough for complex operations.
 -   **Call:** More flexible but requires more care to ensure security. Allows you to specify the amount of ETH to send and any data to include in the call.
+
+### `constructor`
+
+**Constructor:** The `constructor` keyword in Solidity is used to define the constructor function of a contract. The constructor is a special function that is executed *only once* when the contract is deployed to the blockchain. It is used to initialize the contract's state variables and perform any setup operations that are required before the contract can be used.
+
+
+### Modifiers
+
+**Modifiers:** Modifiers in Solidity are used to add custom checks or conditions to functions. They allow you to define reusable logic that can be applied to multiple functions in a contract. Modifiers are typically used to enforce access control, validate inputs, or perform pre- and post-processing tasks.
+
+Syntax:
+    
+```solidity
+modifier onlyOwner() {
+    require(msg.sender == owner, "Only owner can call this function");
+    _; // Continue executing the function
+}
+```
