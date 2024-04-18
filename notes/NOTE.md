@@ -755,3 +755,26 @@ For example, if you have a token with 18 decimal places (like Ether), 1 token is
 In the provided code, the function `getPrice` is multiplying the result of `priceFeed.latestRoundData()` by `10000000000` (or `1e10`). This is because the price feed returns the price with 8 decimal places, but Ether has 18 decimal places. So, to convert the price to the same scale as Ether, it needs to be multiplied by `10^(18-8) = 10^10`, which is `10000000000`.
 
 This is a common pattern in Solidity and other blockchain programming languages due to the lack of native support for floating-point numbers.
+
+User:
+
+> So, if there is a token with 6 decimal, then I need to do answer / 100
+
+Copilot:
+
+> Yes, that's correct. If you're dealing with a token that has 6 decimal places and you want to convert the price from a feed that provides it with 8 decimal places, you would divide the price by `10^(8-6) = 10^2 = 100`.
+>
+> Here's how you can modify the `getPrice` function to do this:
+>
+> ```solidity
+> function getPrice() internal view returns (uint256) {
+>    AggregatorV3Interface priceFeed = AggregatorV3Interface(
+>        0x694AA1769357215DE4FAC081bf1f309aDC325306
+>    );
+>    (, int256 answer, , , ) = priceFeed.latestRoundData();
+>    // Convert the price to the scale of a token with 6 decimal places
+>    return uint256(answer) / 100;
+> }
+> ```
+>
+> This will return the price with 6 decimal places, which is the same scale as your token.
