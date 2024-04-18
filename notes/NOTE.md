@@ -863,7 +863,7 @@ Why to use `unchecked`: The "unchecked" keyword can be used in situations where 
 
 **Resetting an Array:** In Solidity, you can reset an array by setting its length to zero. This clears the array and removes all elements, effectively resetting it to an empty state. Here's an example of how to reset an array in Solidity:
 
-*from gemini*
+_from gemini_
 **Comparison of the Solidity Code Snippets for Resetting an Array:**
 
 **Snippet 1:**
@@ -927,3 +927,23 @@ function resetArray() public {
 -   For large arrays, `delete numbers` or `numbers = new uint256[](0)` are better choices, as they free up storage space and can save gas on future storage operations.
 -   `numbers = new uint256[](0)` offers a balance of efficiency and initialization, but it comes with a slightly higher gas cost than `delete numbers`.
 -   The choice of which method to use depends on the specific requirements of your contract and the size of the array you're working with.
+
+### Transfer ETH
+
+Three ways to transfer ETH:
+
+1. **Transfer:** `address.transfer(amount)`
+2. **Send:** `address.send(amount)`
+3. **Call:** `bool success = address.call{value: amount}("")`
+
+**Transfer:** The `transfer` function is a built-in function in Solidity that allows you to transfer Ether (ETH) from one address to another. It is commonly used to send ETH to a specific address or contract. The `transfer` function is a secure way to transfer ETH, as it automatically reverts the transaction if the transfer fails.
+
+**Send:** The `send` function is another built-in function in Solidity that allows you to send Ether (ETH) to a specific address. It is similar to the `transfer` function but returns a boolean value indicating whether the transfer was successful. The `send` function is less commonly used than `transfer` due to its lower security guarantees.
+
+**Call:** The `call` function in Solidity is a low-level function that allows you to send Ether (ETH) and data to a specific address. It is more flexible than `transfer` and `send` but requires more care to ensure security. The `call` function returns a boolean value indicating whether the call was successful and allows you to specify the amount of ETH to send and any data to include in the call.
+
+**Compare:**
+
+-   **Transfer:** Automatically reverts the transaction if the transfer fails. Limited to 2300 gas, which may not be enough for complex operations.
+-   **Send:** Returns a boolean value indicating whether the transfer was successful. limited to 2300 gas, which may not be enough for complex operations.
+-   **Call:** More flexible but requires more care to ensure security. Allows you to specify the amount of ETH to send and any data to include in the call.
