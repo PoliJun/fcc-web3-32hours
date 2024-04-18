@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
-import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 
 // Why is this a library and not abstract?
 // Why not an interface?
@@ -21,11 +21,9 @@ library PriceConverter {
     }
 
     // 1000000000
-    function getConversionRate(uint256 ethAmount)
-        internal
-        view
-        returns (uint256)
-    {
+    function getConversionRate(
+        uint256 ethAmount
+    ) internal view returns (uint256) {
         uint256 ethPrice = getPrice();
         uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1000000000000000000;
         // or (Both will do the same thing)

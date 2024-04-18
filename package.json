@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "hardhat": "^2.22.3"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^1.0.0"
   }
 }

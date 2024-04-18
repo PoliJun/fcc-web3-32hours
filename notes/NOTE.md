@@ -642,10 +642,116 @@ contract ExtraStorage is SimpleStorage {
 
 Two key words:
 
-- virtual
+-   virtual
     > The `virtual` keyword is used in Solidity to indicate that a function can be overridden in derived contracts. When a function is marked as `virtual`, it can be overridden by functions in derived contracts.
-- override
+-   override
     > The `override` keyword is used in Solidity to indicate that a function is overriding a function from a base contract. When a function is marked as `override`, it must match the function signature of the base function it is overriding.
 
 ## Lesson 4: Remix Fund Me
 
+### Transactions - Fields
+
+Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. The simplest transaction is transferring ETH from one account to another.
+
+-   **Nonce**: tx count of the account
+-   **Gas Price**: price per unit of gas
+-   **Gas Limit**: max amount of gas that this tx can consume
+-   **To**: recipient of the tx
+-   **Value**: amount of wei to send
+-   **Data**: input data for the tx
+-   **V, R, S**: signature of the tx
+
+### 1e18 & `require`
+
+1 Ether = 1e18 Wei
+
+`require(msg.value > 1e18, "ETH not enough");`
+
+if the value is less than 1 Ether, the transaction will **_revert_**.
+
+### Chainlink & Oracles
+
+Chainlink is a decentralized oracle network that enables smart contracts to securely interact with real-world data. Oracles are trusted sources of information that provide data to smart contracts on the blockchain. Chainlink oracles connect smart contracts to external data sources, APIs, and payment systems, enabling smart contracts to access off-chain data and execute real-world transactions.
+
+**Why don't we use an http api?**
+
+-   Centralized: against the spirit of blockchain
+-   Single point of failure: If the API goes down, the smart contract can't get the data.
+-   Trust: We have to trust the API to provide accurate and timely data.
+
+Besides, if different nodes use different APIs or fetch apis at different time, they will get different data.
+
+#### Chainlink Data Feeds
+
+Chainlink Data Feeds are decentralized oracle networks that provide secure and reliable data to smart contracts on the blockchain. Chainlink Data Feeds are composed of multiple independent nodes that fetch data from various sources, aggregate it, and deliver it to smart contracts. Data Feeds are designed to provide accurate, tamper-proof, and real-time data to smart contracts, enabling them to interact with external data sources and make informed decisions.
+
+**Reference Contract** Explanation: The reference contract is a smart contract that acts as a bridge between the Chainlink oracle network and the smart contract that needs external data. The reference contract receives data from the Chainlink oracle network and forwards it to the smart contract, ensuring that the data is accurate and secure.
+
+**Reputation System** Explanation: Chainlink uses a reputation system to ensure the reliability and accuracy of its oracle nodes. Nodes that consistently provide accurate data are rewarded with a higher reputation score, while nodes that provide inaccurate data are penalized. The reputation system helps maintain the integrity of the Chainlink oracle network and ensures that smart contracts receive reliable data.
+
+**Which node to provide data is determined by the reputation system.**
+
+> In the Chainlink network, the selection of oracle nodes that provide data to a smart contract is typically determined by the contract creator. When creating a request for data, the contract creator can specify which nodes they want to fulfill the request. They might choose nodes based on their reputation, the fees they charge, or other factors.
+>
+> Once the nodes have been selected and the request has been made, each node independently fetches the requested data and reports it back to the smart contract. The contract then aggregates the responses from all the nodes to form a final result. This could be a simple average of all the responses, or a more complex aggregation method could be used.
+>
+> This system ensures that the data provided to the smart contract is reliable and tamper-proof. Even if one node provides incorrect data, the impact on the final result will be minimal as long as the majority of nodes are honest. This is a key aspect of Chainlink's decentralized oracle network.
+
+#### Convert ETH to USD
+
+Decimals in Solidity: Solidity does not support floating-point numbers. To represent decimal numbers, you can use integers and scale them by a fixed factor. For example, to represent dollars and cents, you can store the amount in cents and divide by 100 when displaying it.
+
+Chainlink VRF: Chainlink Verifiable Random Function (VRF) is a secure and verifiable source of randomness for smart contracts on the blockchain. Chainlink VRF generates random numbers that are tamper-proof and verifiable, enabling smart contracts to access random data for various applications, such as gaming, gambling, and decentralized finance.
+
+Chainlink Keepers: Chainlink Keepers are decentralized service providers that automate smart contract functions based on predefined conditions. Chainlink Keepers monitor smart contracts for specific events or triggers and execute predefined actions in response. Keepers help automate smart contract operations, such as updating data feeds, rebalancing portfolios, and executing transactions.
+
+Chainlink to make get requests: Chainlink nodes can make HTTP GET requests to external APIs to fetch data for smart contracts. This allows smart contracts to access real-world data, such as price feeds, weather information, and sports scores, from external sources. Chainlink's decentralized oracle network ensures that the data is accurate, secure, and tamper-proof.
+
+Import tokens in metamask: To import tokens into MetaMask, you need to add the token contract address, token symbol, and number of decimals. This allows MetaMask to recognize and display the token in your wallet. You can import tokens by clicking "Add Token" in MetaMask and entering the required information.
+
+Volume Data: Volume data refers to the amount of trading activity that occurs in a market over a specific period. It represents the total number of shares or contracts traded during a given time frame, such as a day, week, or month. Volume data is used by traders and analysts to assess market liquidity, price trends, and investor sentiment.
+
+### Review sending ETH and working with Chainlink
+
+#### `payable`
+
+Intro: The `payable` keyword in Solidity is used to indicate that a function can receive Ether (ETH) as part of a transaction. When a function is marked as `payable`, it can accept ETH payments from external accounts or contracts. This allows users to send ETH to the function when calling it, enabling various use cases, such as transferring funds, purchasing tokens, or interacting with smart contracts that require ETH payments.
+
+### Interfaces and Price Feeds
+
+**Interfaces:** Interfaces in Solidity are used to define the structure of a contract without implementing its functions. An interface specifies the function signatures and return types that a contract must implement, allowing other contracts to interact with it without knowing its internal details. Interfaces are commonly used to define the external functions of other contracts or external services, such as oracles or price feeds.
+
+Get ABI through interfaces: To interact with a smart contract in Solidity, you need to know its Application Binary Interface (ABI), which defines the functions and data structures of the contract. You can obtain the ABI of a contract by compiling it in Remix or using a tool like Etherscan. Once you have the ABI, you can use it to interact with the contract's functions and data.
+
+```solidity
+function getPrice() internal view returns (uint256) {
+        // Sepolia ETH / USD Address
+        // https://docs.chain.link/data-feeds/price-feeds/addresses#Sepolia%20Testnet
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(
+            0x694AA1769357215DE4FAC081bf1f309aDC325306
+        );
+        (, int256 answer, , , ) = priceFeed.latestRoundData();
+        // ETH/USD rate in 18 digit
+        return uint256(answer * 10000000000);
+        // or (Both will do the same thing)
+        // return uint256(answer * 1e10); // 1* 10 ** 10 == 10000000000
+    }
+```
+
+#### Chainlink Price Feeds
+
+`(, int256 answer, , , ) = priceFeed.latestRoundData();`
+The answer get ETH/USD rate in 8 digits.
+Then convert it to 18 digits.
+
+**Digits / Decimal**:
+
+In the context of the provided Solidity code, "digits" refers to the number of decimal places in a number. This is particularly important in blockchain and cryptocurrency applications due to the use of fixed-point arithmetic.
+
+In Ethereum and many other blockchains, there's no native support for floating-point numbers (numbers with decimal points), so fixed-point arithmetic is used instead. This involves dealing with integers only and keeping track of the "decimal point" separately.
+
+For example, if you have a token with 18 decimal places (like Ether), 1 token is represented as `1 * 10^18` (or `1e18`), and 0.01 tokens is represented as `1 * 10^16` (or `1e16`). This allows you to work with fractional amounts while only using integer arithmetic.
+
+In the provided code, the function `getPrice` is multiplying the result of `priceFeed.latestRoundData()` by `10000000000` (or `1e10`). This is because the price feed returns the price with 8 decimal places, but Ether has 18 decimal places. So, to convert the price to the same scale as Ether, it needs to be multiplied by `10^(18-8) = 10^10`, which is `10000000000`.
+
+This is a common pattern in Solidity and other blockchain programming languages due to the lack of native support for floating-point numbers.
