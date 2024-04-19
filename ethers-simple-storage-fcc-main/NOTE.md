@@ -93,7 +93,7 @@ let factory = new ethers.ContractFactory(abi, binary, wallet)
 const contract = await contractFactory.deploy()
 ```
 
-7. Transaction receipt 
+7. Transaction receipt
 
 ```javascript
 const deploymentReceipt = await contract.deployTransaction.wait(1) // wait for 1 block
@@ -103,3 +103,23 @@ const deploymentReceipt = await contract.deployTransaction.wait(1) // wait for 1
 
 A nonce is a number used to prevent replay attacks in Ethereum transactions. It is a unique number that is generated for each transaction and is used to ensure that the transaction is executed only once.
 
+### use BigNumber
+
+BigNumber is a library that provides arbitrary-precision arithmetic in JavaScript. It allows you to perform calculations with large numbers without losing precision.
+
+### Back ticks
+
+Backticks are used to create template literals in JavaScript. Template literals allow you to embed expressions inside a string by using `${}`.
+
+### Transaction response need w`ait()`
+
+```javascript
+const txResponse = await contract.set(42)
+const receipt = await txResponse.wait()
+```
+
+`view` function: read only function
+
+```javascript
+const value = await contract.get()
+```

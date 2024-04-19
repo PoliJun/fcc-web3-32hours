@@ -9,7 +9,7 @@ async function main() {
     // The old way can be seen below:
     // let provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL)
     // On ether 6 and above, you should use like this
-    let provider = new ethers.JsonRpcProvider("http://localhost:7545")
+    let provider = new ethers.JsonRpcProvider("http://127.0.0.1:7545")
     // let provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL)
     let wallet = new ethers.Wallet(
         "0x075a0b125150ffd8deb2f390b8ebb12924c7b31ce6cf8f912744f2a585c1fb22",
@@ -21,14 +21,19 @@ async function main() {
     //   process.env.PRIVATE_KEY_PASSWORD
     // );
     // wallet = wallet.connect(provider);
-    const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi")
-    const binary = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.bin")
+    const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8")
+    const binary = fs.readFileSync(
+        "./SimpleStorage_sol_SimpleStorage.bin",
+        "utf8"
+    )
     const contractFactory = new ethers.ContractFactory(abi, binary, wallet)
     console.log("Deploying, please wait...")
     const contract = await contractFactory.deploy()
     // const contract = await contractFactory.deploy({ gasPrice: 100000000000 })
     // const deploymentReceipt = await contract.deployTransaction.wait(1)
-    console.log(`Contract deployed to ${contract.address}`)
+    // wating for 10 seconds here
+    // await new Promise((resolve) => setTimeout(resolve, 10000))
+    console.log(`Contract deployed to ${await contract.getAddress()}`)
     // console.log("Here is the transaction:")
     // console.log(contract.deployTransaction)
     // console.log("Here is the receipt:")
@@ -70,7 +75,7 @@ async function main() {
 main()
     .then(() => process.exit(0))
     .catch((error) => {
-        // console.error(error)
+        console.error(error)
         process.exit(1)
     })
 
