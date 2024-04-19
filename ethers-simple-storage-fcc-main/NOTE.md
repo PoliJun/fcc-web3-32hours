@@ -98,3 +98,8 @@ const contract = await contractFactory.deploy()
 ```javascript
 const deploymentReceipt = await contract.deployTransaction.wait(1) // wait for 1 block
 ```
+
+### nonce
+
+A nonce is a number used to prevent replay attacks in Ethereum transactions. It is a unique number that is generated for each transaction and is used to ensure that the transaction is executed only once.
+
