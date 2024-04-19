@@ -1015,3 +1015,6 @@ What if someone sends ETH to the contract without calling a function? Or what if
     //  /        \
     //receive()  fallback()
 ```
+
+### Recap
+
