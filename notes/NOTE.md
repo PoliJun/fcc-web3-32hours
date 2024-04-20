@@ -1,6 +1,6 @@
-# 1. FCC 32 hours web3 course
+# FCC 32 hours web3 course
 
-## 1.1. Covered topics
+## Covered topics
 
 -   DeFi
 -   NFTs
@@ -9,18 +9,18 @@
 -   ERC20s
     ... More!
 
-## 1.2. Best practices
+## Best practices
 
 **[repo](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)**
 
-## 1.3. Lesson 1 Blockchain Basics
+## Lesson 1 Blockchain Basics
 
-### 1.3.1. Bitcoin vs. Ethereum
+### Bitcoin vs. Ethereum
 
 -   Bitcoin just store value
 -   Ethereum is a platform not just to store value but also decentralized agreements.
 
-### 1.3.2. Oracles
+###  Oracles
 
 chainlink, band protocol, etc.
 
@@ -30,25 +30,25 @@ chainlink, band protocol, etc.
 
 Chianlink is a decentralized oracle network that enables smart contracts to securely interact with real-world data.
 
-### 1.3.3. Hybrid Smart Contracts
+###  Hybrid Smart Contracts
 
 On-chain + Off-chain Agreements
 
 Combine On-chain logic and Off-chain data.
 
-### 1.3.4. There are many blockchain platforms
+###  There are many blockchain platforms
 
 Such as Polkadot, Solana, etc.
 
 Most of them are EVM compatible.
 
-### 1.3.5. Dapp
+###  Dapp
 
 Dapp = Decentralized application
 
 Decentralized Protocol = Smart Contract
 
-### 1.3.6. Web3
+###  Web3
 
 Web1, Web2, and Web3 represent different generations of the internet.
 
@@ -59,7 +59,7 @@ Web1, Web2, and Web3 represent different generations of the internet.
 
 -   **Web3.0**: This is the future generation of the internet, also known as the "read-write-execute" web. It aims to create a decentralized internet where users have control over their own data. It leverages blockchain technology and decentralized networks to achieve this. Web3.0 enables direct peer-to-peer interactions, with smart contracts automating agreements and transactions. Decentralized applications (DApps) are a key part of Web3.0.
 
-### 1.3.7. What is the value of Smart Contracts?
+###  What is the value of Smart Contracts?
 
 -   Trust minimized agreements
 
@@ -67,7 +67,7 @@ Web1, Web2, and Web3 represent different generations of the internet.
 
 -   Promises unbreakable
 
-### 1.3.8. The purpose of Smart Contracts
+###  The purpose of Smart Contracts
 
 In real world:
 Agreements/Contracts = Promises
@@ -81,41 +81,41 @@ Deployed on the blockchain.
 
 Paper Guarantees(Brand based) -> Cryptographic Guarantees(Math based)
 
-### 1.3.9. ERC20
+###  ERC20
 
 -   ERC20 is a standard interface for fungible tokens on the Ethereum blockchain.
 
-### 1.3.10. DeFi
+###  DeFi
 
 -   DeFi stands for Decentralized Finance.
 
-### 1.3.11. Other benefits of blockchain
+###  Other benefits of blockchain
 
 Counterparty Risk Removal
 
-### 1.3.12. DAOs
+###  DAOs
 
 -   DAO stands for Decentralized Autonomous Organization.
 
-### 1.3.13. NFTs
+###  NFTs
 
 -   NFT stands for Non-Fungible Token.
 
-### 1.3.14. Your First Transaction
+###  Your First Transaction
 
 Wallet:
 
 -   Metamask
 -   WalletConnect
 
-#### 1.3.14.1. Metamask
+####  Metamask
 
 **For every account, there are two keys:**
 
 -   public unique address
 -   private key: Never share it with anyone
 
-#### 1.3.14.2. Etherscan
+####  Etherscan
 
 Introduction to Etherscan: Etherscan is a Block Explorer and Analytics Platform for Ethereum, a decentralized smart contracts platform. Etherscan allows you to explore and search the Ethereum blockchain for transactions, addresses, tokens, prices, and other activities taking place on Ethereum (ETH).
 
@@ -134,13 +134,13 @@ Networks Etherscan supports:
 -   Arbitrum
     ... and many more!
 
-### 1.3.15. Test Networks
+###  Test Networks
 
 Faucets are used to get testnet tokens.
 
-### 1.3.16. Gas
+###  Gas
 
-#### 1.3.16.1. Introduction to Gas
+####  Introduction to Gas
 
 Gas is the fee you pay to execute a transaction on the Ethereum network. It is a unit that measures the amount of computational effort required to execute operations on the Ethereum network. Gas fees are paid in Ether (ETH) and are used to incentivize miners to include transactions in blocks.
 
@@ -148,7 +148,7 @@ Gas Limit: The maximum amount of gas you are willing to pay for a transaction.
 
 Gas and Transaction Fees: The total cost of a transaction is calculated by multiplying the gas price by the gas used.
 
-### 1.3.17. Blockchain Demo
+###  Blockchain Demo
 
 [Demo toll](https://andersbrownworth.com/blockchain/)
 
@@ -165,13 +165,13 @@ If one peer tries to change the blockchain, the other peers will reject it.
 
 Tokens: transactions on the blockchain.(Tx). Data
 
-### 1.3.18. Signing Transactions
+###  Signing Transactions
 
 **Question: How do we know that the transaction is from the owner to the receiver?**
 
 > Answer: Singing the transaction with the private key. Verifying the transaction with the public key.
 
-### 1.3.19. Gas II: Block Rewards & EIP 1559
+###  Gas II: Block Rewards & EIP 1559
 
 Gas limit can be edited by the user, for example, in Wallet.
 
@@ -184,7 +184,7 @@ Get burnt: The gas fee is burnt. It is not given to the miner. It is removed fro
 
 Base, Max Priority Fee, and Max Fee: Base fee is the minimum fee you have to pay. Max Priority Fee is the maximum fee you are willing to pay. Max Fee is the maximum fee you are willing to pay.
 
-### 1.3.20. Chain Selection and Sybil Resistance
+###  Chain Selection and Sybil Resistance
 
 **Sybil Attack:** A Sybil attack is a type of attack in which a malicious actor creates multiple fake identities to gain control of a network or system. The goal of a Sybil attack is to subvert the reputation or trust system of the network by creating a large number of fake identities that appear to be independent.
 
@@ -227,7 +227,7 @@ Proof of Work (PoW) is a consensus mechanism used in blockchain networks to vali
 
 Overall, Proof of Work is a fundamental concept in blockchain technology, providing a mechanism for decentralized consensus, transaction validation, and network security.
 
-### 1.3.21. Proof of Stake
+###  Proof of Stake
 
 Proof of Stake (PoS) is a consensus mechanism used in blockchain networks to achieve agreement on the state of the network and validate transactions. PoS differs from Proof of Work (PoW) in that it relies on participants staking their cryptocurrency holdings as collateral to secure the network and create new blocks. Here's how Proof of Stake works:
 
@@ -263,11 +263,11 @@ Proof of Stake (PoS) is a consensus mechanism used in blockchain networks to ach
 
 Overall, Proof of Stake is a key concept in blockchain technology, providing an alternative consensus mechanism to Proof of Work that aims to achieve agreement on the state of the network, validate transactions, and secure the blockchain in a more energy-efficient manner.
 
-### 1.3.22. Nakamoto Consensus
+###  Nakamoto Consensus
 
 Nakamoto Consensus is the consensus mechanism used in Bitcoin and other blockchain networks that rely on Proof of Work (PoW) to achieve agreement on the state of the network and validate transactions. Named after Bitcoin's pseudonymous creator, Satoshi Nakamoto, Nakamoto Consensus is a fundamental concept in blockchain technology. Here's how Nakamoto Consensus works:
 
-### 1.3.23. Layer 1 and Layer 2
+###  Layer 1 and Layer 2
 
 Layer 1 and Layer 2 are terms used in blockchain technology to describe different architectural layers and scaling solutions. Here's an overview of Layer 1 and Layer 2 in blockchain:
 
@@ -289,11 +289,11 @@ Layer 1 and Layer 2 are terms used in blockchain technology to describe differen
 -   Layer 2 focuses on scaling solutions and protocols built on top of Layer 1 to improve transaction throughput and efficiency.
 -   Layer 1 blockchains provide the foundation for Layer 2 solutions to enhance scalability and performance.
 
-## 1.4. Lesson 2: Welcome to Remix! Simple Storage
+##  Lesson 2: Welcome to Remix! Simple Storage
 
-### 1.4.1. Solidity
+###  Solidity
 
-#### 1.4.1.1. Syntax
+####  Syntax
 
 **version pragma**
 
@@ -315,7 +315,7 @@ contract SimpleStorage {
 }
 ```
 
-#### 1.4.1.2. Basic Solidity Types
+####  Basic Solidity Types
 
 -   **uint**: unsigned integer, positive integer
 -   **int**: signed integer, positive or negative integer
@@ -338,7 +338,7 @@ Example:
 bytes32 myBytes; // Max size is 32 bytes
 ```
 
-#### 1.4.1.3. Variables
+####  Variables
 
 Declare:
 
@@ -352,7 +352,7 @@ or
 uint256 public favoriteNumber; // default value is 0, default visibility is private
 ```
 
-#### 1.4.1.4. Functions
+####  Functions
 
 ```solidity
 function store(uint256 _favoriteNumber) public {
@@ -368,21 +368,21 @@ Explain:
 -   **\_favoriteNumber**: parameter name
 -   **public**: visibility
 
-#### 1.4.1.5. Visibility
+####  Visibility
 
 -   **public**: anyone can call this function
 -   **private**: only this contract can call this function
 -   **internal**: only this contract and contracts deriving from it can call this function
 -   **external**: only other contracts can call this function
 
-#### 1.4.1.6. Key Words
+####  Key Words
 
 -   **view**: read-only function, does not modify state, does not cost gas
 -   **pure**: function does not read or modify state, does not cost gas
 
 Explain State: State is the data stored in the contract.
 
-### 1.4.2. Remix
+###  Remix
 
 deployed contract has an address.
 
@@ -395,7 +395,7 @@ Click variables to see the value.
 Public variables creates a getter function.
 Private variables do not create a getter function.
 
-### 1.4.3. A quick gas example
+###  A quick gas example
 
 ```solidity
 function store(uint256 _favoriteNumber) public {
@@ -405,9 +405,9 @@ function store(uint256 _favoriteNumber) public {
 
 Explain gas: The fee you pay to execute a transaction on the Ethereum network. The more complex the transaction, the more gas you need to pay.
 
-### 1.4.4. Basic Solidity Arrays & Structs
+###  Basic Solidity Arrays & Structs
 
-#### 1.4.4.1. Arrays
+####  Arrays
 
 ```solidity
 uint256[] numbers;
@@ -437,7 +437,7 @@ uint256[3] numbers;
 numbers.push(4);
 ```
 
-#### 1.4.4.2. Structs
+####  Structs
 
 Declaration:
 
@@ -460,7 +460,7 @@ Just showing index in Remix call function. `0: 2; 1: Andres`
 
 Input index to get the value in an array.
 
-#### 1.4.4.3. Mappings
+####  Mappings
 
 ```solidity
 mapping(string => uint256) public nameToFavoriteNumber;
@@ -475,7 +475,7 @@ function addPerson(string memory _name, uint256 _favoriteNumber) public {
 }
 ```
 
-### 1.4.5. `memory` and `storage`
+###  `memory` and `storage`
 
 -   **calldata**: temporary place to store data, can't be modified
 -   **memory**: temporary place to store data, can be modified
@@ -516,15 +516,15 @@ function addPerson(string memory _name, uint256 _favoriteNumber) public {
 }
 ```
 
-### 1.4.6. Basic solidity errors and warnings
+###  Basic solidity errors and warnings
 
-#### 1.4.6.1. Errors
+####  Errors
 
 -   **require**: check a condition, if false, it will throw an error and revert the transaction
 -   **assert**: check a condition, if false, it will throw an error and revert the transaction
 -   **revert**: revert the transaction
 
-### 1.4.7. EVM Overview
+###  EVM Overview
 
 EVM stands for Ethereum Virtual Machine. It is the runtime environment for smart contracts in Ethereum. The EVM is responsible for executing smart contracts and processing transactions on the Ethereum network. Here's an overview of the EVM:
 
@@ -552,7 +552,7 @@ EVM stands for Ethereum Virtual Machine. It is the runtime environment for smart
     >
     > Data location can only be specified for array, struct, or mapping types. As for `string`, it is a dynamic array.
 
-### 1.4.8. Deploying your first smart contract
+###  Deploying your first smart contract
 
 Environment: Injected Web3
 
@@ -562,15 +562,15 @@ Call a Transaction:
 
 MetaMask will popup to ask for permission to sign the transaction.(Confirm the transaction)
 
-### 1.4.9. The EVM & A Recap of Lesson 2
+###  The EVM & A Recap of Lesson 2
 
 -   **EVM**: Ethereum Virtual Machine
 -   Compiled down to EVM
 -   EVM Compatible: Binance Smart Chain, Polygon, etc.
 
-## 1.5. Lesson 3: Remix Storage Factory
+##  Lesson 3: Remix Storage Factory
 
-### 1.5.1. Importing Contracts
+###  Importing Contracts
 
 ```solidity
 import "./SimpleStorage.sol";
@@ -578,7 +578,7 @@ import "./SimpleStorage.sol";
 
 Composability: The ability to combine different components or systems to create new and more complex systems.
 
-### 1.5.2. Notice version compatible
+###  Notice version compatible
 
 Notice: The version of the imported contract should be compatible with the current contract.
 
@@ -594,7 +594,7 @@ Creating a new instance of a contract:
 SimpleStorage simpleStorage = new SimpleStorage();
 ```
 
-### 1.5.3. Interacting with other contracts
+###  Interacting with other contracts
 
 ```solidity
 
@@ -607,7 +607,7 @@ function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) publ
 }
 ```
 
-### 1.5.4. ABI
+###  ABI
 
 ABI stands for Application Binary Interface. It is a standard way to interact with smart contracts in Ethereum. The ABI defines the functions and data structures of a smart contract, allowing external applications to interact with it. The ABI is used to encode and decode data when calling functions on a smart contract.
 
@@ -615,7 +615,7 @@ ABI stands for Application Binary Interface. It is a standard way to interact wi
 
 See Compile Details in Remix.
 
-### 1.5.5. Inheritance & Overrides
+###  Inheritance & Overrides
 
 **Inheritance:** Inheritance is a feature of Solidity that allows you to create new contracts by deriving from existing contracts. The derived contract inherits the state variables and functions of the base contract, enabling code reuse and modularity.
 
@@ -647,9 +647,9 @@ Two key words:
 -   override
     > The `override` keyword is used in Solidity to indicate that a function is overriding a function from a base contract. When a function is marked as `override`, it must match the function signature of the base function it is overriding.
 
-## 1.6. Lesson 4: Remix Fund Me
+##  Lesson 4: Remix Fund Me
 
-### 1.6.1. Transactions - Fields
+###  Transactions - Fields
 
 Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. The simplest transaction is transferring ETH from one account to another.
 
@@ -661,7 +661,7 @@ Transactions are cryptographically signed instructions from accounts. An account
 -   **Data**: input data for the tx
 -   **V, R, S**: signature of the tx
 
-### 1.6.2. 1e18 & `require`
+###  1e18 & `require`
 
 1 Ether = 1e18 Wei
 
@@ -669,7 +669,7 @@ Transactions are cryptographically signed instructions from accounts. An account
 
 if the value is less than 1 Ether, the transaction will **_revert_**.
 
-### 1.6.3. Chainlink & Oracles
+###  Chainlink & Oracles
 
 Chainlink is a decentralized oracle network that enables smart contracts to securely interact with real-world data. Oracles are trusted sources of information that provide data to smart contracts on the blockchain. Chainlink oracles connect smart contracts to external data sources, APIs, and payment systems, enabling smart contracts to access off-chain data and execute real-world transactions.
 
@@ -681,7 +681,7 @@ Chainlink is a decentralized oracle network that enables smart contracts to secu
 
 Besides, if different nodes use different APIs or fetch apis at different time, they will get different data.
 
-#### 1.6.3.1. Chainlink Data Feeds
+####  Chainlink Data Feeds
 
 Chainlink Data Feeds are decentralized oracle networks that provide secure and reliable data to smart contracts on the blockchain. Chainlink Data Feeds are composed of multiple independent nodes that fetch data from various sources, aggregate it, and deliver it to smart contracts. Data Feeds are designed to provide accurate, tamper-proof, and real-time data to smart contracts, enabling them to interact with external data sources and make informed decisions.
 
@@ -697,7 +697,7 @@ Chainlink Data Feeds are decentralized oracle networks that provide secure and r
 >
 > This system ensures that the data provided to the smart contract is reliable and tamper-proof. Even if one node provides incorrect data, the impact on the final result will be minimal as long as the majority of nodes are honest. This is a key aspect of Chainlink's decentralized oracle network.
 
-#### 1.6.3.2. Convert ETH to USD
+####  Convert ETH to USD
 
 Decimals in Solidity: Solidity does not support floating-point numbers. To represent decimal numbers, you can use integers and scale them by a fixed factor. For example, to represent dollars and cents, you can store the amount in cents and divide by 100 when displaying it.
 
@@ -711,13 +711,13 @@ Import tokens in metamask: To import tokens into MetaMask, you need to add the t
 
 Volume Data: Volume data refers to the amount of trading activity that occurs in a market over a specific period. It represents the total number of shares or contracts traded during a given time frame, such as a day, week, or month. Volume data is used by traders and analysts to assess market liquidity, price trends, and investor sentiment.
 
-### 1.6.4. Review sending ETH and working with Chainlink
+###  Review sending ETH and working with Chainlink
 
-#### 1.6.4.1. `payable`
+####  `payable`
 
 Intro: The `payable` keyword in Solidity is used to indicate that a function can receive Ether (ETH) as part of a transaction. When a function is marked as `payable`, it can accept ETH payments from external accounts or contracts. This allows users to send ETH to the function when calling it, enabling various use cases, such as transferring funds, purchasing tokens, or interacting with smart contracts that require ETH payments.
 
-### 1.6.5. Interfaces and Price Feeds
+###  Interfaces and Price Feeds
 
 **Interfaces:** Interfaces in Solidity are used to define the structure of a contract without implementing its functions. An interface specifies the function signatures and return types that a contract must implement, allowing other contracts to interact with it without knowing its internal details. Interfaces are commonly used to define the external functions of other contracts or external services, such as oracles or price feeds.
 
@@ -738,7 +738,7 @@ function getPrice() internal view returns (uint256) {
     }
 ```
 
-#### 1.6.5.1. Chainlink Price Feeds
+####  Chainlink Price Feeds
 
 `(, int256 answer, , , ) = priceFeed.latestRoundData();`
 The answer get ETH/USD rate in 8 digits.
@@ -779,7 +779,7 @@ Copilot:
 >
 > This will return the price with 6 decimal places, which is the same scale as your token.
 
-### 1.6.6. Review Interfaces, Github imports and math in solidity
+###  Review Interfaces, Github imports and math in solidity
 
 [Block and Transaction Properties](https://docs.soliditylang.org/en/v0.8.25/units-and-global-variables.html#block-and-transaction-properties)
 
@@ -821,7 +821,7 @@ Block and Transaction Properties
 
     tx.origin (address): sender of the transaction (full call chain)
 
-### 1.6.7. Library
+###  Library
 
 **Library:** A library in Solidity is a collection of reusable functions and data structures that can be shared across multiple contracts. Libraries are similar to contracts but have some key differences:
 
@@ -849,7 +849,7 @@ using SafeMath for uint256;
 uint256 result = a.add(b); // a is the first parameter, b is the second parameter
 ```
 
-### 1.6.8. SafeMath, Overflow Checking, and the "unchecked" Keyword
+###  SafeMath, Overflow Checking, and the "unchecked" Keyword
 
 **SafeMath:** SafeMath is a library in Solidity that provides arithmetic functions with overflow checking. It helps prevent integer overflow and underflow errors by checking the result of arithmetic operations against the maximum and minimum values of the data type.
 
@@ -859,7 +859,7 @@ uint256 result = a.add(b); // a is the first parameter, b is the second paramete
 
 Why to use `unchecked`: The "unchecked" keyword can be used in situations where the developer is certain that overflow or underflow will not occur, or when the cost of checking for overflow is too high. However, using "unchecked" can introduce security vulnerabilities if the arithmetic operation does result in overflow or underflow.
 
-### 1.6.9. Solidity Basics: Resetting an Array
+###  Solidity Basics: Resetting an Array
 
 **Resetting an Array:** In Solidity, you can reset an array by setting its length to zero. This clears the array and removes all elements, effectively resetting it to an empty state. Here's an example of how to reset an array in Solidity:
 
@@ -928,7 +928,7 @@ function resetArray() public {
 -   `numbers = new uint256[](0)` offers a balance of efficiency and initialization, but it comes with a slightly higher gas cost than `delete numbers`.
 -   The choice of which method to use depends on the specific requirements of your contract and the size of the array you're working with.
 
-### 1.6.10. Transfer ETH
+###  Transfer ETH
 
 Three ways to transfer ETH:
 
@@ -948,11 +948,11 @@ Three ways to transfer ETH:
 -   **Send:** Returns a boolean value indicating whether the transfer was successful. limited to 2300 gas, which may not be enough for complex operations.
 -   **Call:** More flexible but requires more care to ensure security. Allows you to specify the amount of ETH to send and any data to include in the call.
 
-### 1.6.11. `constructor`
+###  `constructor`
 
 **Constructor:** The `constructor` keyword in Solidity is used to define the constructor function of a contract. The constructor is a special function that is executed _only once_ when the contract is deployed to the blockchain. It is used to initialize the contract's state variables and perform any setup operations that are required before the contract can be used.
 
-### 1.6.12. Modifiers
+###  Modifiers
 
 **Modifiers:** Modifiers in Solidity are used to add custom checks or conditions to functions. They allow you to define reusable logic that can be applied to multiple functions in a contract. Modifiers are typically used to enforce access control, validate inputs, or perform pre- and post-processing tasks.
 
@@ -965,7 +965,7 @@ modifier onlyOwner() {
 }
 ```
 
-### 1.6.13. Advanced Solidity Concepts
+###  Advanced Solidity Concepts
 
 **Gas efficiency**: Gas efficiency refers to the optimization of smart contracts to reduce the amount of gas required to execute transactions on the Ethereum network. Gas is the fee you pay to execute transactions and smart contracts on the blockchain, and optimizing gas usage can help reduce costs and improve the performance of your contracts.
 
@@ -973,7 +973,7 @@ modifier onlyOwner() {
 > `constant` and `immutable`: constant and immutable are keywords in Solidity that are used to declare variables with specific properties:
 > constant variables are read-only and cannot be modified after initialization, while immutable variables are read-only but can be initialized with complex expressions at deployment time.
 
-### 1.6.14. Advanced Solidity Custom Errors
+###  Advanced Solidity Custom Errors
 
 `error NotOwner()` on the top of the contract. Then use it in the modifier.
 
@@ -995,7 +995,7 @@ modifier onlyOwner() {
 
 This is more gas efficient than using `require`. Because `require` will consume all the gas, but `revert` will return the remaining gas. We don't save the error message in the storage.
 
-### 1.6.15. Advanced Solidity: Receive and Fallback
+###  Advanced Solidity: Receive and Fallback
 
 What if someone sends ETH to the contract without calling a function? Or what if the function call fails?
 [Special Functions](https://docs.soliditylang.org/en/v0.8.25/contracts.html#special-functions)
@@ -1027,6 +1027,7 @@ Concepts we didn't cover yet (will cover in later sections)
 5.  abi.encode / decode
 6.  Hash with keccak256
 7.  Yul / Assembly
+
 ## Lesson 5: Ethers.js Simple Storage
 
 ### Asynchronous Programming in JavaScript
@@ -1039,15 +1040,15 @@ Example of asynchronous programming in JavaScript:
 // Asynchronous function that takes a callback function as an argument
 function fetchData(callback) {
     setTimeout(() => {
-        const data = "Hello, world!"
-        callback(data)
-    }, 1000)
+        const data = "Hello, world!";
+        callback(data);
+    }, 1000);
 }
 
 // Call the asynchronous function with a callback function
 fetchData((data) => {
-    console.log(data)
-})
+    console.log(data);
+});
 ```
 
 #### Asynchronous Functions
@@ -1061,20 +1062,20 @@ Example of an asynchronous function in JavaScript:
 function fetchData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const data = "Hello, world!"
-            resolve(data)
-        }, 1000)
-    })
+            const data = "Hello, world!";
+            resolve(data);
+        }, 1000);
+    });
 }
 
 // Call the asynchronous function and handle the promise
 fetchData()
     .then((data) => {
-        console.log(data)
+        console.log(data);
     })
     .catch((error) => {
-        console.error(error)
-    })
+        console.error(error);
+    });
 ```
 
 ### Compiling Solidity
@@ -1097,35 +1098,35 @@ Ethers.js is a JavaScript library that provides a simple and easy-to-use interfa
 2. wallet: private_key, provider
 
 ```javascript
-let provider = new ethers.JsonRpcProvider(process.env.RPC_URL)
-let wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
+let provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
+let wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 ```
 
 3. abi: contract_abi
 4. binary: contract_bytecode
 
 ```javascript
-const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8")
-const binary = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.bin", "utf8")
+const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8");
+const binary = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.bin", "utf8");
 ```
 
 5. contract factory: abi, binary
 
 ```javascript
-let factory = new ethers.ContractFactory(abi, binary, wallet)
+let factory = new ethers.ContractFactory(abi, binary, wallet);
 ```
 
 6. deploy contract: factory, args; Adding transaction overrides
 
 ```javascript
 // const contract = await contractFactory.deploy({ gasPrice: 100000000000 })
-const contract = await contractFactory.deploy()
+const contract = await contractFactory.deploy();
 ```
 
 7. Transaction receipt
 
 ```javascript
-const deploymentReceipt = await contract.deployTransaction.wait(1) // wait for 1 block
+const deploymentReceipt = await contract.deployTransaction.wait(1); // wait for 1 block
 ```
 
 ### nonce
@@ -1143,14 +1144,14 @@ Backticks are used to create template literals in JavaScript. Template literals 
 ### Transaction response need `wait()`
 
 ```javascript
-const txResponse = await contract.set(42)
-const receipt = await txResponse.wait()
+const txResponse = await contract.set(42);
+const receipt = await txResponse.wait();
 ```
 
 `view` function: read only function
 
 ```javascript
-const value = await contract.get()
+const value = await contract.get();
 ```
 
 ### Environment variables
@@ -1164,9 +1165,9 @@ dotenv: `npm install dotenv`
 feature: load environment variables from a .env file
 
 ```javascript
-require("dotenv").config()
+require("dotenv").config();
 
-const provider = new ethers.JsonRpcProvider(process.env.RPC_URL)
+const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
 ```
 
 `process`: global object that provides information about the current Node.js process
@@ -1182,7 +1183,7 @@ properties of `process` object: `env`, `argv`, `cwd()`, `exit()`, `on()`
 ### Create Wallet from encrypted JSON
 
 ```javascript
-const wallet = ethers.Wallet.fromEncryptedJson(encryptedJson, password)
+const wallet = ethers.Wallet.fromEncryptedJson(encryptedJson, password);
 ```
 
 ### The `.env` Pledge
@@ -1234,7 +1235,9 @@ install it globally: `npm install -g ts-node`
 `!`: non-null assertion operator
 
 ```typescript
-const provider = new ethers.JsonRpcProvider(process.env.RPC_URL!)
+const provider = new ethers.JsonRpcProvider(process.env.RPC_URL!);
 ```
 
 effect: tells TypeScript that the value is not null or undefined
+
+-
