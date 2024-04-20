@@ -33,3 +33,39 @@ module.exports = {
 
 `npx hardhat run scripts/deploy.js --network localhost`
 
+## Verify
+
+hardhat-etherscan(deprecated) plugin or hardhat-verify:
+
+Now, you can run `npx hardhat verify --network localhost DEPLOYED_CONTRACT_ADDRESS` to verify your contract on Etherscan. Using `hardhat-verify`
+
+
+## Custom Hardhat Tasks
+
+`npx hardhat run scripts/run.js` to run a custom task.
+
+`npx hardhat run scripts/run.js --network localhost` to run a custom task on a specific network.
+
+Example:
+
+```js
+// in hardhat.config.js
+task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
+  const accounts = await hre.ethers.getSigners();
+
+  for (const account of accounts) {
+    console.log(account.address);
+  }
+});
+
+module.exports = {
+  networks: {
+    hardhat: {
+      chainId: 1337
+    }
+  }
+};
+```
+
+
+
