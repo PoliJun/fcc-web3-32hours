@@ -159,3 +159,53 @@ const wallet = ethers.Wallet.fromEncryptedJson(encryptedJson, password)
 ### The `.env` Pledge
 
 [THE .ENV PLEDGE](https://github.com/smartcontractkit/full-blockchain-solidity-course-js/discussions/5#discussion-4072059)
+
+### Alchemy
+
+Alchemy is a blockchain developer platform that provides a suite of tools and services to help you build, scale, and manage your blockchain applications. It offers APIs, developer tools, and infrastructure services to help you interact with the Ethereum blockchain.
+
+Deploy on and Info on real blockchain.
+
+Get Rpc URL from Alchemy.
+
+### Verify and Publish Contract on Etherscan
+
+Etherscan is a block explorer and analytics platform for the Ethereum blockchain. It allows you to explore the Ethereum blockchain, view transactions, and interact with smart contracts.
+
+To verify and publish a contract on Etherscan, you need the following information:
+
+1. Contract address
+2. Contract ABI
+3. Contract source code
+4. Compiler version
+
+...
+
+We can also do this programmatically.
+
+### Alchemy Dashboard The Mempool
+
+The mempool is a list of unconfirmed transactions that are waiting to be included in a block on the Ethereum blockchain. It is a temporary storage area for transactions that have been broadcast to the network but have not yet been confirmed by miners.
+
+### Recap
+
+In this lesson, we learned about asynchronous programming in JavaScript, how to compile Solidity contracts, interact with the Ethereum blockchain using Ethers.js, and deploy contracts on a local blockchain and on the Ethereum mainnet. We also learned how to use environment variables to store sensitive information and how to create wallets from encrypted JSON files.
+
+### Optional TypeScript
+
+To use ES modules in javascript, we need to add `"type": "module"` to `package.json`.
+
+In TypeScript, we don't need to add `"type": "module"` to `package.json`.
+
+`ts-node`: TypeScript execution and REPL for Node.js
+install it globally: `npm install -g ts-node`
+
+`tsconfig.json`: TypeScript configuration file
+
+`!`: non-null assertion operator
+
+```typescript
+const provider = new ethers.JsonRpcProvider(process.env.RPC_URL!)
+```
+
+effect: tells TypeScript that the value is not null or undefined

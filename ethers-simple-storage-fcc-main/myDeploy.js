@@ -1,5 +1,5 @@
 const ethers = require("ethers")
-const solc = require("solc")
+// const solc = require("solc")
 const fs = require("fs-extra")
 require("dotenv").config()
 
