@@ -1,7 +1,6 @@
 {
     "name": "hardhat-simple-storage-fcc",
     "devDependencies": {
-        "@nomicfoundation/hardhat-verify": "^2.0.3",
         "@nomiclabs/hardhat-ethers": "^2.0.4",
         "@nomiclabs/hardhat-etherscan": "^3.0.0",
         "@nomiclabs/hardhat-waffle": "^2.0.2",
@@ -13,11 +12,17 @@
         "solidity-coverage": "^0.7.18"
     },
     "dependencies": {
+        "@nomicfoundation/hardhat-verify": "^2.0.6",
         "dotenv": "^14.2.0",
         "prettier-plugin-solidity": "^1.0.0-beta.19"
     },
     "scripts": {
-        "prettier": "prettier --write ."
+        "prettier": "prettier --write .",
+        "compile": "hardhat compile",
+        "test": "hardhat test",
+        "coverage": "hardhat coverage",
+        "gas": "hardhat --network localhost gas",
+        "deploy": "hardhat run scripts/deploy.js"
     },
     "description": "This is a section of the Javascript Blockchain/Smart Contract FreeCodeCamp Course.",
     "version": "1.0.0",

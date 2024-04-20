@@ -10,8 +10,8 @@ async function main() {
 
     // Not functionable in version 6^ ethers ----->
 
-    // await simpleStorage.deployed()
-    // console.log(`Deployed contract to: ${simpleStorage.address}`)
+    await simpleStorage.deployed()
+    console.log(`Deployed contract to: ${simpleStorage.address}`)
 
     //______________________________________________
 
@@ -20,28 +20,30 @@ async function main() {
         console.log("Waiting for block confirmations...")
 
         // Not functionable in version 6^ ethers ----->
+        await simpleStorage.deployTransaction.wait(6)
+        // console.log(`Deployed contract to: ${simpleStorage.address}`)
 
-        await simpleStorage.deploymentTransaction().wait(6)
-        await verify(simpleStorage.target, [])
+        // await simpleStorage.deployed()
+        await verify(simpleStorage.address, [])
 
         //______________________________________________
     }
 
-    const currentValue = await simpleStorage.retrieve()
-    console.log(`Current Value is: ${currentValue}`)
+    // const currentValue = await simpleStorage.retrieve()
+    // console.log(`Current Value is: ${currentValue}`)
 
-    // Update the current value
-    const transactionResponse = await simpleStorage.store(7)
-    await transactionResponse.wait(1)
-    const updatedValue = await simpleStorage.retrieve()
-    console.log(`Updated Value is: ${updatedValue}`)
+    // // Update the current value
+    // const transactionResponse = await simpleStorage.store(7)
+    // await transactionResponse.wait(1)
+    // const updatedValue = await simpleStorage.retrieve()
+    // console.log(`Updated Value is: ${updatedValue}`)
 }
 
-// async function verify(contractAddress, args) {
-const verify = async (contractAddress, args) => {
+async function verify(contractAddress, args) {
+// const verify = async (contractAddress, args) => {
     console.log("Verifying contract...")
     try {
-        await run("verify:verify", {
+        await hre.run("verify:verify", {
             address: contractAddress,
             constructorArguments: args,
         })
@@ -49,7 +51,8 @@ const verify = async (contractAddress, args) => {
         if (e.message.toLowerCase().includes("already verified")) {
             console.log("Already Verified!")
         } else {
-            console.log(e)
+            console.log(e.message)
+            // console.log(e)
         }
     }
 }
@@ -58,6 +61,6 @@ const verify = async (contractAddress, args) => {
 main()
     .then(() => process.exit(0))
     .catch((error) => {
-        console.error(error)
+        // console.error(error)
         process.exit(1)
     })
