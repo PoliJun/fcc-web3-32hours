@@ -44,12 +44,5 @@ module.exports = {
         outputFile: "gas-report.txt",
         noColors: true,
         coinmarketcap: COINMARKETCAP_API_KEY,
-    },
-    sourcify: {
-        enabled: true,
-        // Optional: specify a different Sourcify server
-        // apiUrl: "https://sourcify.dev/server",
-        // Optional: specify a different Sourcify repository
-        // browserUrl: "https://repo.sourcify.dev",
-      }
+    }
 }
