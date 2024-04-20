@@ -111,7 +111,7 @@ BigNumber is a library that provides arbitrary-precision arithmetic in JavaScrip
 
 Backticks are used to create template literals in JavaScript. Template literals allow you to embed expressions inside a string by using `${}`.
 
-### Transaction response need w`ait()`
+### Transaction response need `wait()`
 
 ```javascript
 const txResponse = await contract.set(42)
@@ -135,7 +135,7 @@ dotenv: `npm install dotenv`
 feature: load environment variables from a .env file
 
 ```javascript
-require("dotenv").config() 
+require("dotenv").config()
 
 const provider = new ethers.JsonRpcProvider(process.env.RPC_URL)
 ```
@@ -144,9 +144,18 @@ const provider = new ethers.JsonRpcProvider(process.env.RPC_URL)
 
 properties of `process` object: `env`, `argv`, `cwd()`, `exit()`, `on()`
 
-- `env`: environment variables
-- `argv`: command-line arguments
-- `cwd()`: current working directory
-- `exit()`: exit the process
-- `on()`: event listener
+-   `env`: environment variables
+-   `argv`: command-line arguments
+-   `cwd()`: current working directory
+-   `exit()`: exit the process
+-   `on()`: event listener
 
+### Create Wallet from encrypted JSON
+
+```javascript
+const wallet = ethers.Wallet.fromEncryptedJson(encryptedJson, password)
+```
+
+### The `.env` Pledge
+
+[THE .ENV PLEDGE](https://github.com/smartcontractkit/full-blockchain-solidity-course-js/discussions/5#discussion-4072059)

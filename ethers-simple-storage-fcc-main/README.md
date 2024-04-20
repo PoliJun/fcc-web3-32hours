@@ -2,27 +2,26 @@
 
 This is part of the FreeCodeCamp Solidity & Javascript Blockchain Course.
 
-Video Link : *[⌨️ (05:30:42) Lesson 5: Ethers.js Simple Storage](https://www.youtube.com/watch?v=gyMwXuJrbJQ&t=19842s)*
-
+Video Link : _[⌨️ (05:30:42) Lesson 5: Ethers.js Simple Storage](https://www.youtube.com/watch?v=gyMwXuJrbJQ&t=19842s)_
 
 # Getting Started
 
 ## Requirements
 
-- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
-- [Nodejs](https://nodejs.org/en/)
-  - You'll know you've installed nodejs right if you can run:
-    - `node --version` and get an ouput like: `vx.x.x`
-- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instead of `npm`
-  - You'll know you've installed yarn right if you can run:
-    - `yarn --version` and get an output like: `x.x.x`
-    - You might need to install it with npm
-- [ganache](https://trufflesuite.com/ganache/)
-  - You'll know you did it right if you can run the application and see:
-    <br>
-    <img src="./img/ganache-picture.png" alt="ganache" width="200"/>
-  - You can alternatively use [ganache-cli](https://www.npmjs.com/package/ganache-cli) or [hardhat](https://hardhat.org/)
+-   [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+    -   You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+-   [Nodejs](https://nodejs.org/en/)
+    -   You'll know you've installed nodejs right if you can run:
+        -   `node --version` and get an ouput like: `vx.x.x`
+-   [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instead of `npm`
+    -   You'll know you've installed yarn right if you can run:
+        -   `yarn --version` and get an output like: `x.x.x`
+        -   You might need to install it with npm
+-   [ganache](https://trufflesuite.com/ganache/)
+    -   You'll know you did it right if you can run the application and see:
+        <br>
+        <img src="./img/ganache-picture.png" alt="ganache" width="200"/>
+    -   You can alternatively use [ganache-cli](https://www.npmjs.com/package/ganache-cli) or [hardhat](https://hardhat.org/)
 
 ### Optional Gitpod
 
@@ -92,22 +91,24 @@ You'll see files `SimpleStorage_sol_SimpleStorage.abi` and `SimpleStorage_sol_Si
 ```
 node deploy.js
 ```
+
 ### For WSL users
 
 1. Run
+
 ```
 yarn add ganache
 ```
 
 2. Change Server settings in Ganache
 
-Settings > Server > Host Name 
+Settings > Server > Host Name
 
 Change Host Name to vEthernet (WSL)
 
-3. Run your application 
+3. Run your application
 
-``` 
+```
 node deploy.js
 ```
 
@@ -129,6 +130,7 @@ USE A METAMASK THAT DOESNT HAVE ANY REAL FUNDS IN IT. Just in case you accidenta
 ```
 node deploy.js
 ```
+
 ---
 
 > Troubleshooting: Ethers 6.X.X instability
@@ -139,13 +141,14 @@ const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL)
 
 TypeError: Cannot read properties of undefined (reading 'JsonRpcProvider')
 ```
-If you are experiencing issues with the latest version of Ethers, ethers ^6.0.2, try 
+
+If you are experiencing issues with the latest version of Ethers, ethers ^6.0.2, try
 
 ```js
 const provider = new ethers.JsonRpcProvider(process.env.RPC_URL)
 ```
 
-as providers were migrated to ethers.* in version 6 (previously ethers.providers.*).
+as providers were migrated to ethers._ in version 6 (previously ethers.providers._).
 reference: https://docs.ethers.org/v6/migrating/#migrate-providers
 
 Or you can easily solve the problem by downgrading to a previous version of Ethers, such as ethers 5.7.2.
