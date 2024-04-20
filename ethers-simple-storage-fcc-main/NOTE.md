@@ -123,3 +123,6 @@ const receipt = await txResponse.wait()
 ```javascript
 const value = await contract.get()
 ```
+
+### Environment variables
+
