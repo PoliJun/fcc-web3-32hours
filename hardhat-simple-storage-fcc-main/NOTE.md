@@ -1,6 +1,6 @@
-# Lesson6: HardHat Simple Storage
+## Lesson6: HardHat Simple Storage
 
-## Hardhat Setup Troubleshooting
+### Hardhat Setup Troubleshooting
 
 `hardhat.config.js`
 
@@ -10,7 +10,7 @@
 
 In general, if you're using Hardhat, it's easier to use the first import because it's already set up to work with your Hardhat configuration. If you're not using Hardhat, or if you need to use a version of ethers that's different from the one included with Hardhat, you might use the second import.
 
-## Hardhat Network
+### Hardhat Network
 
 `npx hardhat node` to start a local Ethereum network.
 
@@ -28,17 +28,17 @@ module.exports = {
 }
 ```
 
-## --network flag
+### --network flag
 
 `npx hardhat run scripts/deploy.js --network localhost`
 
-## Verify
+### Verify
 
 hardhat-etherscan(deprecated) plugin or hardhat-verify:
 
 Now, you can run `npx hardhat verify --network localhost DEPLOYED_CONTRACT_ADDRESS` to verify your contract on Etherscan. Using `hardhat-verify`
 
-## Custom Hardhat Tasks
+### Custom Hardhat Tasks
 
 `npx hardhat run scripts/run.js` to run a custom task.
 
@@ -86,7 +86,7 @@ module.exports = {}
 require("./tasks/accounts")
 ```
 
-## `hre` object
+### `hre` object
 
 `hre` is an object that contains all the Hardhat Runtime Environment objects. It's passed to tasks and scripts as the second argument.
 
@@ -96,7 +96,7 @@ We no need to import `hre` because it's already available in the global scope.
 
 Build Hardhat Run Time Environment: `npx hardhat run scripts/run.js`
 
-## Hardhat localhost network
+### Hardhat localhost network
 
 `npx hardhat node` to start a local Ethereum network.
 
@@ -138,7 +138,7 @@ What is the difference between the default network and the localhost network?
 
 The default network is the network that Hardhat uses when you run tasks or scripts without specifying a network. The localhost network is a network that you can start with `npx hardhat node`. The default network is a Hardhat network that is created automatically when you run tasks or scripts. The localhost network is a local Ethereum network that you can start with `npx hardhat node`.
 
-## Hardhat console
+### Hardhat console
 
 `npx hardhat console --network localhost` to start a Hardhat console.
 
@@ -150,7 +150,7 @@ Run commands in the console:
 const [owner] = await ethers.getSigners()
 ```
 
-## Running tests
+### Running tests
 
 `describe` and `it` functions are used to write tests.
 
@@ -162,7 +162,7 @@ They takes a string as the first argument, which is the name of the test or grou
 
 `npx hardhat test` to run tests.
 
-### `chai`
+#### `chai`
 
 `chai` is an assertion library that provides a set of functions for writing tests.
 
@@ -190,7 +190,7 @@ assertion methods:
 
 `chai` is included with Hardhat by default, so you don't need to install it separately.
 
-## See How Much Gas a Transaction Uses
+### See How Much Gas a Transaction Uses
 
 plugin `hardhat-gas-reporter`
 
@@ -207,11 +207,11 @@ gasReporter: {
     }
 ```
 
-## Coinmarketcap API key
+### Coinmarketcap API key
 
 You can see how much gas a transaction uses in USD by providing a Coinmarketcap API key to the `hardhat-gas-reporter` plugin.
 
-## TEST Coverage
+### TEST Coverage
 
 Explain test coverage: `npx hardhat coverage` to run tests and see how much of your code is covered by tests.
 
@@ -230,11 +230,11 @@ What happens when running `npx hardhat coverage`?
 
 The `solidity-coverage` plugin runs your tests and generates a coverage report that shows how much of your code is covered by tests. It uses the `npx hardhat test` command to run the tests and the `npx hardhat coverage` command to generate the coverage report.
 
-## Waffle
+### Waffle
 
 Intro: Waffle is a testing library for Ethereum smart contracts that provides a set of tools for writing tests.
 
-## Recap
+### Recap
 
 -   Hardhat is a development environment for Ethereum smart contracts that provides a set of tools for writing, testing, and deploying smart contracts.
 -   Hardhat provides a set of plugins that extend its functionality, such as the `hardhat-gas-reporter` plugin for reporting gas usage and the `solidity-coverage` plugin for generating test coverage reports.
