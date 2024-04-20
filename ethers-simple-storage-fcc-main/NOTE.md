@@ -126,3 +126,27 @@ const value = await contract.get()
 
 ### Environment variables
 
+.env
+
+add it to .gitignore
+
+dotenv: `npm install dotenv`
+
+feature: load environment variables from a .env file
+
+```javascript
+require("dotenv").config() 
+
+const provider = new ethers.JsonRpcProvider(process.env.RPC_URL)
+```
+
+`process`: global object that provides information about the current Node.js process
+
+properties of `process` object: `env`, `argv`, `cwd()`, `exit()`, `on()`
+
+- `env`: environment variables
+- `argv`: command-line arguments
+- `cwd()`: current working directory
+- `exit()`: exit the process
+- `on()`: event listener
+
