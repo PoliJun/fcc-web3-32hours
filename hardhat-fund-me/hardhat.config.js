@@ -1,4 +1,8 @@
-require("@nomicfoundation/hardhat-toolbox");
+require('@nomicfoundation/hardhat-chai-matchers');
+require('@nomicfoundation/hardhat-ethers');
+require('@typechain/hardhat');
+require('hardhat-gas-reporter');
+require('solidity-coverage');
 require("hardhat-deploy");
 require("dotenv").config();
 

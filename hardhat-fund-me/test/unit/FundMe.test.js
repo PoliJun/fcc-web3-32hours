@@ -6,25 +6,40 @@ const { developmentChains } = require("../../helper-hardhat-config");
     ? describe.skip
     : describe("FundMe", function () {
           let fundMe;
-          let mockV3Aggregator;
+          //   let mockV3Aggregator;
           let deployer;
+          let MockV3AggregatorAddress;
           const sendValue = ethers.parseEther("1"); // Ethers V6
           beforeEach(async () => {
               // const accounts = await ethers.getSigners()
               // deployer = accounts[0]
               deployer = (await getNamedAccounts()).deployer;
-              await deployments.fixture(["all"]);
-              fundMe = await ethers.getContractAt("FundMe", deployer);
-              mockV3Aggregator = await ethers.getContractAt(
-                  "MockV3Aggregator",
+
+              const Deployments = await deployments.fixture(["mocks"]);
+              MockV3AggregatorAddress = Deployments.MockV3Aggregator.address;
+              //deploy fundme with ethers
+
+              const fundMeFactory = await ethers.getContractFactory(
+                  "FundMe",
                   deployer,
               );
+              let FundMe = await fundMeFactory.deploy(MockV3AggregatorAddress);
+              fundMe = await FundMe.deployed();
+
+              //   fundMe = await ethers.getContractAt("FundMe", fundMeAddress, deployer);
+              //   mockV3Aggregator = await ethers.getContractAt(
+              //       "MockV3Aggregator",MockV3AggregatorAddress,
+              //       deployer,
+              //   );
           });
 
           describe("constructor", function () {
               it("sets the aggregator addresses correctly", async () => {
-                  const response = await fundMe.getPriceFeed();
-                  assert.equal(response, mockV3Aggregator.address);
+                  const response = await fundMe
+                      .connect(deployer)
+                      .getPriceFeed();
+                  console.log("************\n" + response + "\n************");
+                  assert.equal(response, MockV3AggregatorAddress);
               });
           });
 
