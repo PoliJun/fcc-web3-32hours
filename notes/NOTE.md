@@ -1489,3 +1489,13 @@ Intro: Waffle is a testing library for Ethereum smart contracts that provides a 
 -   Hardhat provides a set of built-in commands that you can run from the command line, such as `npx hardhat node` to start a local Ethereum network and `npx hardhat console` to start a Hardhat console.
 -   Hardhat provides a set of built-in assertions that you can use in your tests, such as the `expect` function for making assertions and the `to` method for chaining assertions together.
 -   Hardhat provides a set of built-in tools for writing, testing, and deploying smart contracts, such as the `npx hardhat test` command for running tests and the `npx hardhat coverage` command for generating test coverage reports.
+
+### TypeScript
+
+`npx hardhat init` to initialize a Hardhat project with TypeScript.
+
+@typechain/hardhat plugin: Automatically generate TypeScript bindings for your smart contracts.
+
+Now, @typechain/hardhat is not actively dev.
+
+
