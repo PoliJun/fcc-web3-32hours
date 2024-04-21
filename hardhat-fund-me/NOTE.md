@@ -72,3 +72,7 @@ Run: `solhint 'contracts/**/*.sol'`.
 ```
 
 This rule will emit an error for each difference between your code and how prettier-solidity would format it. You can also set it to warning instead of error if you prefer that.
+
+### Hardhat deploy
+
+Intro: 
