@@ -252,3 +252,54 @@ This kind of network is configured with objects with the following fields:
 -   httpHeaders: You can use this field to set extra HTTP Headers to be used when making JSON-RPC requests. It accepts a JavaScript object which maps header names to their values. Default value: undefined.
 
 -   timeout: Timeout in ms for requests sent to the JSON-RPC server. If the request takes longer than this, it will be cancelled. Default value: 40000 for the localhost network, 20000 for the rest.
+
+### Solidity Style Guide
+
+Contract elements should be laid out in the following order:
+
+<ol>
+<li>Pragma statements</li>
+<li>Import statements</li>
+<li>Events</li>
+<li>Errors</li>
+<li>Interfaces</li>
+<li>Libraries</li>
+<li>Contracts</li>
+</ol>
+
+Inside each contract, library or interface, use the following order:
+
+<ol>
+<li>Type declarations</li>
+<li>State variables</li>
+<li>Events</li>
+<li>Errors</li>
+<li>Modifiers</li>
+<li>Functions</li>
+</ol>
+
+#### NatSpec
+
+NatSpec is a documentation system that is used to describe the functionality of contracts and functions. It is a standard for writing documentation for Solidity code. NatSpec comments are written in a special format that is similar to JSDoc comments in JavaScript.
+
+### Testing with Hardhat
+
+-   by local hardhat network
+-   by forked hardhat network
+
+#### namedAccounts
+
+```json
+namedAccounts: {
+        deployer: {
+            default: 0, // here this will by default take the first account as deployer
+            1: 0, // similarly on mainnet it will take the first account as deployer. Note though that depending on how hardhat network are configured, the account 0 on one network can be different than on another
+        },
+    },
+```
+
+```js
+deployer = (await getNamedAccounts()).deployer;
+```
+
+**Groups tests by function**
