@@ -231,6 +231,24 @@ if (
 
 ### hardhat config: networks
 
-```json
+These are networks that connect to an external node. Nodes can be running in your computer, like Ganache, or remotely, like Infura or Alchemy.
 
-```
+This kind of network is configured with objects with the following fields:
+
+-   url: The url of the node. This argument is required for custom networks.
+
+-   chainId: An optional number, used to validate the network Hardhat connects to. If not present, this validation is omitted.
+
+-   from: The address to use as default sender. If not present the first account of the node is used.
+
+-   gas: Its value should be "auto" or a number. If a number is used, it will be the gas limit used by default in every transaction. If "auto" is used, the gas limit will be automatically estimated. Default value: "auto".
+
+-   gasPrice: Its value should be "auto" or a number. This parameter behaves like gas. Default value: "auto".
+
+-   gasMultiplier: A number used to multiply the results of gas estimation to give it some slack due to the uncertainty of the estimation process. Default value: 1.
+
+-   accounts: This field controls which accounts Hardhat uses. It can use the node's accounts (by setting it to "remote"), a list of local accounts (by setting it to an array of hex-encoded private keys), or use an HD Wallet. Default value: "remote".
+
+-   httpHeaders: You can use this field to set extra HTTP Headers to be used when making JSON-RPC requests. It accepts a JavaScript object which maps header names to their values. Default value: undefined.
+
+-   timeout: Timeout in ms for requests sent to the JSON-RPC server. If the request takes longer than this, it will be cancelled. Default value: 40000 for the localhost network, 20000 for the rest.
