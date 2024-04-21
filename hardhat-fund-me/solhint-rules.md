@@ -1,7 +1,7 @@
 ---
-warning:     "This is a dynamically generated file. Do not edit manually."
-layout:      "default"
-title:       "Rule Index of Solhint"
+warning: "This is a dynamically generated file. Do not edit manually."
+layout: "default"
+title: "Rule Index of Solhint"
 ---
 
 ## Best Practise Rules
@@ -22,7 +22,6 @@ title:       "Rule Index of Solhint"
 | [payable-fallback](./rules/best-practises/payable-fallback.md)           | When fallback is not payable and there is no receive function you will not be able to receive currency.                                    | $~~~~~~~~$✔️ |            |
 | [reason-string](./rules/best-practises/reason-string.md)                 | Require or revert statement must have a reason string and check that each reason string is at most N characters long.                      | $~~~~~~~~$✔️ |            |
 | [constructor-syntax](./rules/best-practises/constructor-syntax.md)       | Constructors should use the new constructor keyword.                                                                                       |              |            |
-        
 
 ## Style Guide Rules
 
@@ -46,7 +45,6 @@ title:       "Rule Index of Solhint"
 | [imports-on-top](./rules/order/imports-on-top.md)                                    | Import statements must be on top.                                                                             | $~~~~~~~~$✔️ |             |
 | [ordering](./rules/order/ordering.md)                                                | Check order of elements in file and inside each contract, according to the style guide.                       |              |             |
 | [visibility-modifier-order](./rules/order/visibility-modifier-order.md)              | Visibility modifier must be first in list of modifiers.                                                       | $~~~~~~~~$✔️ |             |
-        
 
 ## Gas Consumption Rules
 
@@ -62,7 +60,6 @@ title:       "Rule Index of Solhint"
 | [gas-small-strings](./rules/gas-consumption/gas-small-strings.md)             | Keep strings smaller than 32 bytes                                                   |              |            |
 | [gas-strict-inequalities](./rules/gas-consumption/gas-strict-inequalities.md) | Suggest Strict Inequalities over non Strict ones                                     |              |            |
 | [gas-struct-packing](./rules/gas-consumption/gas-struct-packing.md)           | Suggest to re-arrange struct packing order when it is inefficient                    |              |            |
-        
 
 ## Miscellaneous
 
@@ -70,7 +67,6 @@ title:       "Rule Index of Solhint"
 | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
 | [comprehensive-interface](./rules/miscellaneous/comprehensive-interface.md) | Check that all public or external functions are override. This is iseful to make sure that the whole API is extracted in an interface. |              |            |
 | [quotes](./rules/miscellaneous/quotes.md)                                   | Enforces the use of double or simple quotes as configured for string literals. Values must be 'single' or 'double'.                    | $~~~~~~~~$✔️ |            |
-        
 
 ## Security Rules
 
@@ -93,9 +89,8 @@ title:       "Rule Index of Solhint"
 | [not-rely-on-time](./rules/security/not-rely-on-time.md)               | Avoid making time-based decisions in your business logic.                |              |             |
 | [reentrancy](./rules/security/reentrancy.md)                           | Possible reentrancy vulnerabilities. Avoid state changes after transfer. | $~~~~~~~~$✔️ |             |
 | [state-visibility](./rules/security/state-visibility.md)               | Explicitly mark visibility of state.                                     | $~~~~~~~~$✔️ |             |
-        
 
 ## References
 
-- [ConsenSys Guide for Smart Contracts](https://consensys.github.io/smart-contract-best-practices/recommendations/)
-- [Solidity Style Guide](http://solidity.readthedocs.io/en/develop/style-guide.html)
+-   [ConsenSys Guide for Smart Contracts](https://consensys.github.io/smart-contract-best-practices/recommendations/)
+-   [Solidity Style Guide](http://solidity.readthedocs.io/en/develop/style-guide.html)
