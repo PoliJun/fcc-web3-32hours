@@ -75,6 +75,40 @@ This rule will emit an error for each difference between your code and how prett
 
 ### Hardhat deploy
 
+deploy parameter options:
+
+```js
+export interface DeployOptions = {
+  from: string; // address (or private key) that will perform the transaction. you can use `getNamedAccounts` to retrieve the address you want by name.
+  contract?: // this is an optional field. If not specified it defaults to the contract with the same name as the first parameter
+    | string // this field can be either a string for the name of the contract
+    | { // or abi and bytecode
+        abi: ABI;
+        bytecode: string;
+        deployedBytecode?: string;
+      };
+  args?: any[]; // the list of argument for the constructor (or the upgrade function in case of proxy)
+  skipIfAlreadyDeployed?: boolean; // if set it to true, will not attempt to deploy even if the contract deployed under the same name is different
+  log?: boolean; // if true, it will log the result of the deployment (tx hash, address and gas used)
+  linkedData?: any; // This allow to associate any JSON data to the deployment. Useful for merkle tree data for example
+  libraries?: { [libraryName: string]: Address }; // This let you associate libraries to the deployed contract
+  proxy?: boolean | string | ProxyOptions; // This options allow to consider your contract as a proxy (see below for more details)
+
+  // here some common tx options :
+  gasLimit?: string | number | BigNumber;
+  gasPrice?: string | BigNumber;
+  value?: string | BigNumber;
+  nonce?: string | number | BigNumber;
+
+  estimatedGasLimit?: string | number | BigNumber; // to speed up the estimation, it is possible to provide an upper gasLimit
+  estimateGasExtra?: string | number | BigNumber; // this option allow you to add a gas buffer on top of the estimation
+
+  autoMine?: boolean; // this force a evm_mine to be executed. this is useful to speed deployment on test network that allow to specify a block delay (ganache for example). This option basically skip the delay by force mining.
+  deterministicDeployment? boolean | string; // if true, it will deploy the contract at a deterministic address based on bytecode and constructor arguments. The address will be the same across all network. It use create2 opcode for that, if it is a string, the string will be used as the salt.
+  waitConfirmations?: number; // number of the confirmations to wait after the transactions is included in the chain
+};
+```
+
 ### aave
 
 The Aave Protocol is decentralised non-custodial liquidity protocol where users can participate as suppliers, borrowers or liquidators. Suppliers provide liquidity to a market and can earn interest on the crypto assets provided, while borrowers are able to borrow in an overcollateralized fashion. Borrowers can also engage in one-block borrow transactions (”flash loans”), which do not require overcollateralization.
@@ -182,4 +216,21 @@ Intro:
 if (deploymentChains.includes(hre.network.name)) {
     // Deploy mocks
 }
+```
+
+#### Exclude test network doing verify
+
+```js
+if (
+    !developmentChains.includes(network.name) &&
+    process.env.ETHERSCAN_API_KEY
+) {
+    await verify(fundMe.address, [ethUsdPriceFeedAddress]);
+}
+```
+
+### hardhat config: networks
+
+```json
+
 ```
