@@ -20,7 +20,7 @@
 -   Bitcoin just store value
 -   Ethereum is a platform not just to store value but also decentralized agreements.
 
-###  Oracles
+### Oracles
 
 chainlink, band protocol, etc.
 
@@ -30,25 +30,25 @@ chainlink, band protocol, etc.
 
 Chianlink is a decentralized oracle network that enables smart contracts to securely interact with real-world data.
 
-###  Hybrid Smart Contracts
+### Hybrid Smart Contracts
 
 On-chain + Off-chain Agreements
 
 Combine On-chain logic and Off-chain data.
 
-###  There are many blockchain platforms
+### There are many blockchain platforms
 
 Such as Polkadot, Solana, etc.
 
 Most of them are EVM compatible.
 
-###  Dapp
+### Dapp
 
 Dapp = Decentralized application
 
 Decentralized Protocol = Smart Contract
 
-###  Web3
+### Web3
 
 Web1, Web2, and Web3 represent different generations of the internet.
 
@@ -59,7 +59,7 @@ Web1, Web2, and Web3 represent different generations of the internet.
 
 -   **Web3.0**: This is the future generation of the internet, also known as the "read-write-execute" web. It aims to create a decentralized internet where users have control over their own data. It leverages blockchain technology and decentralized networks to achieve this. Web3.0 enables direct peer-to-peer interactions, with smart contracts automating agreements and transactions. Decentralized applications (DApps) are a key part of Web3.0.
 
-###  What is the value of Smart Contracts?
+### What is the value of Smart Contracts?
 
 -   Trust minimized agreements
 
@@ -67,7 +67,7 @@ Web1, Web2, and Web3 represent different generations of the internet.
 
 -   Promises unbreakable
 
-###  The purpose of Smart Contracts
+### The purpose of Smart Contracts
 
 In real world:
 Agreements/Contracts = Promises
@@ -81,41 +81,41 @@ Deployed on the blockchain.
 
 Paper Guarantees(Brand based) -> Cryptographic Guarantees(Math based)
 
-###  ERC20
+### ERC20
 
 -   ERC20 is a standard interface for fungible tokens on the Ethereum blockchain.
 
-###  DeFi
+### DeFi
 
 -   DeFi stands for Decentralized Finance.
 
-###  Other benefits of blockchain
+### Other benefits of blockchain
 
 Counterparty Risk Removal
 
-###  DAOs
+### DAOs
 
 -   DAO stands for Decentralized Autonomous Organization.
 
-###  NFTs
+### NFTs
 
 -   NFT stands for Non-Fungible Token.
 
-###  Your First Transaction
+### Your First Transaction
 
 Wallet:
 
 -   Metamask
 -   WalletConnect
 
-####  Metamask
+#### Metamask
 
 **For every account, there are two keys:**
 
 -   public unique address
 -   private key: Never share it with anyone
 
-####  Etherscan
+#### Etherscan
 
 Introduction to Etherscan: Etherscan is a Block Explorer and Analytics Platform for Ethereum, a decentralized smart contracts platform. Etherscan allows you to explore and search the Ethereum blockchain for transactions, addresses, tokens, prices, and other activities taking place on Ethereum (ETH).
 
@@ -134,13 +134,13 @@ Networks Etherscan supports:
 -   Arbitrum
     ... and many more!
 
-###  Test Networks
+### Test Networks
 
 Faucets are used to get testnet tokens.
 
-###  Gas
+### Gas
 
-####  Introduction to Gas
+#### Introduction to Gas
 
 Gas is the fee you pay to execute a transaction on the Ethereum network. It is a unit that measures the amount of computational effort required to execute operations on the Ethereum network. Gas fees are paid in Ether (ETH) and are used to incentivize miners to include transactions in blocks.
 
@@ -148,7 +148,7 @@ Gas Limit: The maximum amount of gas you are willing to pay for a transaction.
 
 Gas and Transaction Fees: The total cost of a transaction is calculated by multiplying the gas price by the gas used.
 
-###  Blockchain Demo
+### Blockchain Demo
 
 [Demo toll](https://andersbrownworth.com/blockchain/)
 
@@ -165,13 +165,13 @@ If one peer tries to change the blockchain, the other peers will reject it.
 
 Tokens: transactions on the blockchain.(Tx). Data
 
-###  Signing Transactions
+### Signing Transactions
 
 **Question: How do we know that the transaction is from the owner to the receiver?**
 
 > Answer: Singing the transaction with the private key. Verifying the transaction with the public key.
 
-###  Gas II: Block Rewards & EIP 1559
+### Gas II: Block Rewards & EIP 1559
 
 Gas limit can be edited by the user, for example, in Wallet.
 
@@ -184,7 +184,7 @@ Get burnt: The gas fee is burnt. It is not given to the miner. It is removed fro
 
 Base, Max Priority Fee, and Max Fee: Base fee is the minimum fee you have to pay. Max Priority Fee is the maximum fee you are willing to pay. Max Fee is the maximum fee you are willing to pay.
 
-###  Chain Selection and Sybil Resistance
+### Chain Selection and Sybil Resistance
 
 **Sybil Attack:** A Sybil attack is a type of attack in which a malicious actor creates multiple fake identities to gain control of a network or system. The goal of a Sybil attack is to subvert the reputation or trust system of the network by creating a large number of fake identities that appear to be independent.
 
@@ -227,7 +227,7 @@ Proof of Work (PoW) is a consensus mechanism used in blockchain networks to vali
 
 Overall, Proof of Work is a fundamental concept in blockchain technology, providing a mechanism for decentralized consensus, transaction validation, and network security.
 
-###  Proof of Stake
+### Proof of Stake
 
 Proof of Stake (PoS) is a consensus mechanism used in blockchain networks to achieve agreement on the state of the network and validate transactions. PoS differs from Proof of Work (PoW) in that it relies on participants staking their cryptocurrency holdings as collateral to secure the network and create new blocks. Here's how Proof of Stake works:
 
@@ -263,11 +263,11 @@ Proof of Stake (PoS) is a consensus mechanism used in blockchain networks to ach
 
 Overall, Proof of Stake is a key concept in blockchain technology, providing an alternative consensus mechanism to Proof of Work that aims to achieve agreement on the state of the network, validate transactions, and secure the blockchain in a more energy-efficient manner.
 
-###  Nakamoto Consensus
+### Nakamoto Consensus
 
 Nakamoto Consensus is the consensus mechanism used in Bitcoin and other blockchain networks that rely on Proof of Work (PoW) to achieve agreement on the state of the network and validate transactions. Named after Bitcoin's pseudonymous creator, Satoshi Nakamoto, Nakamoto Consensus is a fundamental concept in blockchain technology. Here's how Nakamoto Consensus works:
 
-###  Layer 1 and Layer 2
+### Layer 1 and Layer 2
 
 Layer 1 and Layer 2 are terms used in blockchain technology to describe different architectural layers and scaling solutions. Here's an overview of Layer 1 and Layer 2 in blockchain:
 
@@ -289,11 +289,11 @@ Layer 1 and Layer 2 are terms used in blockchain technology to describe differen
 -   Layer 2 focuses on scaling solutions and protocols built on top of Layer 1 to improve transaction throughput and efficiency.
 -   Layer 1 blockchains provide the foundation for Layer 2 solutions to enhance scalability and performance.
 
-##  Lesson 2: Welcome to Remix! Simple Storage
+## Lesson 2: Welcome to Remix! Simple Storage
 
-###  Solidity
+### Solidity
 
-####  Syntax
+#### Syntax
 
 **version pragma**
 
@@ -315,7 +315,7 @@ contract SimpleStorage {
 }
 ```
 
-####  Basic Solidity Types
+#### Basic Solidity Types
 
 -   **uint**: unsigned integer, positive integer
 -   **int**: signed integer, positive or negative integer
@@ -338,7 +338,7 @@ Example:
 bytes32 myBytes; // Max size is 32 bytes
 ```
 
-####  Variables
+#### Variables
 
 Declare:
 
@@ -352,7 +352,7 @@ or
 uint256 public favoriteNumber; // default value is 0, default visibility is private
 ```
 
-####  Functions
+#### Functions
 
 ```solidity
 function store(uint256 _favoriteNumber) public {
@@ -368,21 +368,21 @@ Explain:
 -   **\_favoriteNumber**: parameter name
 -   **public**: visibility
 
-####  Visibility
+#### Visibility
 
 -   **public**: anyone can call this function
 -   **private**: only this contract can call this function
 -   **internal**: only this contract and contracts deriving from it can call this function
 -   **external**: only other contracts can call this function
 
-####  Key Words
+#### Key Words
 
 -   **view**: read-only function, does not modify state, does not cost gas
 -   **pure**: function does not read or modify state, does not cost gas
 
 Explain State: State is the data stored in the contract.
 
-###  Remix
+### Remix
 
 deployed contract has an address.
 
@@ -395,7 +395,7 @@ Click variables to see the value.
 Public variables creates a getter function.
 Private variables do not create a getter function.
 
-###  A quick gas example
+### A quick gas example
 
 ```solidity
 function store(uint256 _favoriteNumber) public {
@@ -405,9 +405,9 @@ function store(uint256 _favoriteNumber) public {
 
 Explain gas: The fee you pay to execute a transaction on the Ethereum network. The more complex the transaction, the more gas you need to pay.
 
-###  Basic Solidity Arrays & Structs
+### Basic Solidity Arrays & Structs
 
-####  Arrays
+#### Arrays
 
 ```solidity
 uint256[] numbers;
@@ -437,7 +437,7 @@ uint256[3] numbers;
 numbers.push(4);
 ```
 
-####  Structs
+#### Structs
 
 Declaration:
 
@@ -460,7 +460,7 @@ Just showing index in Remix call function. `0: 2; 1: Andres`
 
 Input index to get the value in an array.
 
-####  Mappings
+#### Mappings
 
 ```solidity
 mapping(string => uint256) public nameToFavoriteNumber;
@@ -475,7 +475,7 @@ function addPerson(string memory _name, uint256 _favoriteNumber) public {
 }
 ```
 
-###  `memory` and `storage`
+### `memory` and `storage`
 
 -   **calldata**: temporary place to store data, can't be modified
 -   **memory**: temporary place to store data, can be modified
@@ -516,15 +516,15 @@ function addPerson(string memory _name, uint256 _favoriteNumber) public {
 }
 ```
 
-###  Basic solidity errors and warnings
+### Basic solidity errors and warnings
 
-####  Errors
+#### Errors
 
 -   **require**: check a condition, if false, it will throw an error and revert the transaction
 -   **assert**: check a condition, if false, it will throw an error and revert the transaction
 -   **revert**: revert the transaction
 
-###  EVM Overview
+### EVM Overview
 
 EVM stands for Ethereum Virtual Machine. It is the runtime environment for smart contracts in Ethereum. The EVM is responsible for executing smart contracts and processing transactions on the Ethereum network. Here's an overview of the EVM:
 
@@ -552,7 +552,7 @@ EVM stands for Ethereum Virtual Machine. It is the runtime environment for smart
     >
     > Data location can only be specified for array, struct, or mapping types. As for `string`, it is a dynamic array.
 
-###  Deploying your first smart contract
+### Deploying your first smart contract
 
 Environment: Injected Web3
 
@@ -562,15 +562,15 @@ Call a Transaction:
 
 MetaMask will popup to ask for permission to sign the transaction.(Confirm the transaction)
 
-###  The EVM & A Recap of Lesson 2
+### The EVM & A Recap of Lesson 2
 
 -   **EVM**: Ethereum Virtual Machine
 -   Compiled down to EVM
 -   EVM Compatible: Binance Smart Chain, Polygon, etc.
 
-##  Lesson 3: Remix Storage Factory
+## Lesson 3: Remix Storage Factory
 
-###  Importing Contracts
+### Importing Contracts
 
 ```solidity
 import "./SimpleStorage.sol";
@@ -578,7 +578,7 @@ import "./SimpleStorage.sol";
 
 Composability: The ability to combine different components or systems to create new and more complex systems.
 
-###  Notice version compatible
+### Notice version compatible
 
 Notice: The version of the imported contract should be compatible with the current contract.
 
@@ -594,7 +594,7 @@ Creating a new instance of a contract:
 SimpleStorage simpleStorage = new SimpleStorage();
 ```
 
-###  Interacting with other contracts
+### Interacting with other contracts
 
 ```solidity
 
@@ -607,7 +607,7 @@ function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) publ
 }
 ```
 
-###  ABI
+### ABI
 
 ABI stands for Application Binary Interface. It is a standard way to interact with smart contracts in Ethereum. The ABI defines the functions and data structures of a smart contract, allowing external applications to interact with it. The ABI is used to encode and decode data when calling functions on a smart contract.
 
@@ -615,7 +615,7 @@ ABI stands for Application Binary Interface. It is a standard way to interact wi
 
 See Compile Details in Remix.
 
-###  Inheritance & Overrides
+### Inheritance & Overrides
 
 **Inheritance:** Inheritance is a feature of Solidity that allows you to create new contracts by deriving from existing contracts. The derived contract inherits the state variables and functions of the base contract, enabling code reuse and modularity.
 
@@ -647,9 +647,9 @@ Two key words:
 -   override
     > The `override` keyword is used in Solidity to indicate that a function is overriding a function from a base contract. When a function is marked as `override`, it must match the function signature of the base function it is overriding.
 
-##  Lesson 4: Remix Fund Me
+## Lesson 4: Remix Fund Me
 
-###  Transactions - Fields
+### Transactions - Fields
 
 Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. The simplest transaction is transferring ETH from one account to another.
 
@@ -661,7 +661,7 @@ Transactions are cryptographically signed instructions from accounts. An account
 -   **Data**: input data for the tx
 -   **V, R, S**: signature of the tx
 
-###  1e18 & `require`
+### 1e18 & `require`
 
 1 Ether = 1e18 Wei
 
@@ -669,7 +669,7 @@ Transactions are cryptographically signed instructions from accounts. An account
 
 if the value is less than 1 Ether, the transaction will **_revert_**.
 
-###  Chainlink & Oracles
+### Chainlink & Oracles
 
 Chainlink is a decentralized oracle network that enables smart contracts to securely interact with real-world data. Oracles are trusted sources of information that provide data to smart contracts on the blockchain. Chainlink oracles connect smart contracts to external data sources, APIs, and payment systems, enabling smart contracts to access off-chain data and execute real-world transactions.
 
@@ -681,7 +681,7 @@ Chainlink is a decentralized oracle network that enables smart contracts to secu
 
 Besides, if different nodes use different APIs or fetch apis at different time, they will get different data.
 
-####  Chainlink Data Feeds
+#### Chainlink Data Feeds
 
 Chainlink Data Feeds are decentralized oracle networks that provide secure and reliable data to smart contracts on the blockchain. Chainlink Data Feeds are composed of multiple independent nodes that fetch data from various sources, aggregate it, and deliver it to smart contracts. Data Feeds are designed to provide accurate, tamper-proof, and real-time data to smart contracts, enabling them to interact with external data sources and make informed decisions.
 
@@ -697,7 +697,7 @@ Chainlink Data Feeds are decentralized oracle networks that provide secure and r
 >
 > This system ensures that the data provided to the smart contract is reliable and tamper-proof. Even if one node provides incorrect data, the impact on the final result will be minimal as long as the majority of nodes are honest. This is a key aspect of Chainlink's decentralized oracle network.
 
-####  Convert ETH to USD
+#### Convert ETH to USD
 
 Decimals in Solidity: Solidity does not support floating-point numbers. To represent decimal numbers, you can use integers and scale them by a fixed factor. For example, to represent dollars and cents, you can store the amount in cents and divide by 100 when displaying it.
 
@@ -711,13 +711,13 @@ Import tokens in metamask: To import tokens into MetaMask, you need to add the t
 
 Volume Data: Volume data refers to the amount of trading activity that occurs in a market over a specific period. It represents the total number of shares or contracts traded during a given time frame, such as a day, week, or month. Volume data is used by traders and analysts to assess market liquidity, price trends, and investor sentiment.
 
-###  Review sending ETH and working with Chainlink
+### Review sending ETH and working with Chainlink
 
-####  `payable`
+#### `payable`
 
 Intro: The `payable` keyword in Solidity is used to indicate that a function can receive Ether (ETH) as part of a transaction. When a function is marked as `payable`, it can accept ETH payments from external accounts or contracts. This allows users to send ETH to the function when calling it, enabling various use cases, such as transferring funds, purchasing tokens, or interacting with smart contracts that require ETH payments.
 
-###  Interfaces and Price Feeds
+### Interfaces and Price Feeds
 
 **Interfaces:** Interfaces in Solidity are used to define the structure of a contract without implementing its functions. An interface specifies the function signatures and return types that a contract must implement, allowing other contracts to interact with it without knowing its internal details. Interfaces are commonly used to define the external functions of other contracts or external services, such as oracles or price feeds.
 
@@ -738,7 +738,7 @@ function getPrice() internal view returns (uint256) {
     }
 ```
 
-####  Chainlink Price Feeds
+#### Chainlink Price Feeds
 
 `(, int256 answer, , , ) = priceFeed.latestRoundData();`
 The answer get ETH/USD rate in 8 digits.
@@ -779,7 +779,7 @@ Copilot:
 >
 > This will return the price with 6 decimal places, which is the same scale as your token.
 
-###  Review Interfaces, Github imports and math in solidity
+### Review Interfaces, Github imports and math in solidity
 
 [Block and Transaction Properties](https://docs.soliditylang.org/en/v0.8.25/units-and-global-variables.html#block-and-transaction-properties)
 
@@ -821,7 +821,7 @@ Block and Transaction Properties
 
     tx.origin (address): sender of the transaction (full call chain)
 
-###  Library
+### Library
 
 **Library:** A library in Solidity is a collection of reusable functions and data structures that can be shared across multiple contracts. Libraries are similar to contracts but have some key differences:
 
@@ -849,7 +849,7 @@ using SafeMath for uint256;
 uint256 result = a.add(b); // a is the first parameter, b is the second parameter
 ```
 
-###  SafeMath, Overflow Checking, and the "unchecked" Keyword
+### SafeMath, Overflow Checking, and the "unchecked" Keyword
 
 **SafeMath:** SafeMath is a library in Solidity that provides arithmetic functions with overflow checking. It helps prevent integer overflow and underflow errors by checking the result of arithmetic operations against the maximum and minimum values of the data type.
 
@@ -859,7 +859,7 @@ uint256 result = a.add(b); // a is the first parameter, b is the second paramete
 
 Why to use `unchecked`: The "unchecked" keyword can be used in situations where the developer is certain that overflow or underflow will not occur, or when the cost of checking for overflow is too high. However, using "unchecked" can introduce security vulnerabilities if the arithmetic operation does result in overflow or underflow.
 
-###  Solidity Basics: Resetting an Array
+### Solidity Basics: Resetting an Array
 
 **Resetting an Array:** In Solidity, you can reset an array by setting its length to zero. This clears the array and removes all elements, effectively resetting it to an empty state. Here's an example of how to reset an array in Solidity:
 
@@ -928,7 +928,7 @@ function resetArray() public {
 -   `numbers = new uint256[](0)` offers a balance of efficiency and initialization, but it comes with a slightly higher gas cost than `delete numbers`.
 -   The choice of which method to use depends on the specific requirements of your contract and the size of the array you're working with.
 
-###  Transfer ETH
+### Transfer ETH
 
 Three ways to transfer ETH:
 
@@ -948,11 +948,11 @@ Three ways to transfer ETH:
 -   **Send:** Returns a boolean value indicating whether the transfer was successful. limited to 2300 gas, which may not be enough for complex operations.
 -   **Call:** More flexible but requires more care to ensure security. Allows you to specify the amount of ETH to send and any data to include in the call.
 
-###  `constructor`
+### `constructor`
 
 **Constructor:** The `constructor` keyword in Solidity is used to define the constructor function of a contract. The constructor is a special function that is executed _only once_ when the contract is deployed to the blockchain. It is used to initialize the contract's state variables and perform any setup operations that are required before the contract can be used.
 
-###  Modifiers
+### Modifiers
 
 **Modifiers:** Modifiers in Solidity are used to add custom checks or conditions to functions. They allow you to define reusable logic that can be applied to multiple functions in a contract. Modifiers are typically used to enforce access control, validate inputs, or perform pre- and post-processing tasks.
 
@@ -965,7 +965,7 @@ modifier onlyOwner() {
 }
 ```
 
-###  Advanced Solidity Concepts
+### Advanced Solidity Concepts
 
 **Gas efficiency**: Gas efficiency refers to the optimization of smart contracts to reduce the amount of gas required to execute transactions on the Ethereum network. Gas is the fee you pay to execute transactions and smart contracts on the blockchain, and optimizing gas usage can help reduce costs and improve the performance of your contracts.
 
@@ -973,7 +973,7 @@ modifier onlyOwner() {
 > `constant` and `immutable`: constant and immutable are keywords in Solidity that are used to declare variables with specific properties:
 > constant variables are read-only and cannot be modified after initialization, while immutable variables are read-only but can be initialized with complex expressions at deployment time.
 
-###  Advanced Solidity Custom Errors
+### Advanced Solidity Custom Errors
 
 `error NotOwner()` on the top of the contract. Then use it in the modifier.
 
@@ -995,7 +995,7 @@ modifier onlyOwner() {
 
 This is more gas efficient than using `require`. Because `require` will consume all the gas, but `revert` will return the remaining gas. We don't save the error message in the storage.
 
-###  Advanced Solidity: Receive and Fallback
+### Advanced Solidity: Receive and Fallback
 
 What if someone sends ETH to the contract without calling a function? Or what if the function call fails?
 [Special Functions](https://docs.soliditylang.org/en/v0.8.25/contracts.html#special-functions)
@@ -1241,6 +1241,7 @@ const provider = new ethers.JsonRpcProvider(process.env.RPC_URL!);
 effect: tells TypeScript that the value is not null or undefined
 
 -
+
 ## Lesson6: HardHat Simple Storage
 
 ### Hardhat Setup Troubleshooting
@@ -1268,7 +1269,7 @@ module.exports = {
             chainId: 1337,
         },
     },
-}
+};
 ```
 
 ### --network flag
@@ -1292,12 +1293,12 @@ Example:
 ```js
 // in hardhat.config.js
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
-    const accounts = await hre.ethers.getSigners()
+    const accounts = await hre.ethers.getSigners();
 
     for (const account of accounts) {
-        console.log(account.address)
+        console.log(account.address);
     }
-})
+});
 
 module.exports = {
     networks: {
@@ -1305,28 +1306,28 @@ module.exports = {
             chainId: 1337,
         },
     },
-}
+};
 ```
 
 or write a script:
 
 ```js
 // tasks/accounts.js
-const { task } = require("hardhat/config")
+const { task } = require("hardhat/config");
 
 task("block-number", "Prints the current block number").setAction(
     // const blockTask = async function() => {}
     // async function blockTask() {}
     async (taskArgs, hre) => {
-        const blockNumber = await hre.ethers.provider.getBlockNumber()
-        console.log(`Current block number: ${blockNumber}`)
-    },
-)
+        const blockNumber = await hre.ethers.provider.getBlockNumber();
+        console.log(`Current block number: ${blockNumber}`);
+    }
+);
 
-module.exports = {}
+module.exports = {};
 
 // in hardhat.config.js
-require("./tasks/accounts")
+require("./tasks/accounts");
 ```
 
 ### `hre` object
@@ -1354,7 +1355,7 @@ module.exports = {
             chainId: 1337,
         },
     },
-}
+};
 ```
 
 Config port and network id:
@@ -1390,7 +1391,7 @@ The default network is the network that Hardhat uses when you run tasks or scrip
 Run commands in the console:
 
 ```js
-const [owner] = await ethers.getSigners()
+const [owner] = await ethers.getSigners();
 ```
 
 ### Running tests
@@ -1463,10 +1464,10 @@ plugin `solidity-coverage`
 
 ```js
 // in hardhat.config.js
-require("@nomiclabs/hardhat-etherscan")
-require("@nomiclabs/hardhat-waffle")
-require("hardhat-gas-reporter")
-require("solidity-coverage")
+require("@nomiclabs/hardhat-etherscan");
+require("@nomiclabs/hardhat-waffle");
+require("hardhat-gas-reporter");
+require("solidity-coverage");
 ```
 
 What happens when running `npx hardhat coverage`?
@@ -1498,4 +1499,515 @@ Intro: Waffle is a testing library for Ethereum smart contracts that provides a 
 
 Now, @typechain/hardhat is not actively dev.
 
+## Lesson 7: Hardhat Fund Me
 
+### Initial Setup
+
+`hardhat`, `hardhat-toolbox`.
+
+1. `npm init -y`
+2. `npm install --save-dev hardhat`
+3. `npx hardhat init`
+
+#### `hardhat-toolbox` is a collection of useful tasks for Hardhat.
+
+When you use this plugin, you'll be able to:
+
+-   Interact with your contracts using ethers.js and the hardhat-ethers plugin.
+-   Test your contracts with Mocha, Chai and our own Hardhat Chai Matchers plugin.
+-   Deploy your contracts with Hardhat Ignition.
+-   Interact with Hardhat Network with our Hardhat Network Helpers.
+-   Verify the source code of your contracts with the hardhat-verify plugin.
+-   Get metrics on the gas used by your contracts with the hardhat-gas-reporter plugin.
+-   Measure your tests coverage with solidity-coverage.
+-   And, if you are using TypeScript, get type bindings for your contracts with Typechain.
+
+#### Network Helpers
+
+When the Toolbox is installed using npm 7 or later, its peer dependencies are automatically installed. However, these dependencies won't be listed in the package.json. As a result, directly importing the Network Helpers can be problematic for certain tools or IDEs. To address this issue, the Toolbox re-exports the Hardhat Network Helpers. You can use them like this:
+
+`import helpers from "@nomicfoundation/hardhat-toolbox/network-helpers";`
+
+### Solhint Linting
+
+Configuration file: `.solhint.json`
+
+**Default**
+
+```json
+{
+    "extends": "solhint:default"
+}
+```
+
+**Note**
+
+The solhint:default configuration contains only two rules: `max-line-length` & `no-console`
+
+**Sample**
+
+```json
+{
+    "extends": "solhint:recommended",
+    "plugins": [],
+    "rules": {
+        "avoid-suicide": "error",
+        "avoid-sha3": "warn"
+    }
+}
+```
+
+#### All [rules](./solhint-rules.md)
+
+Run: `solhint 'contracts/**/*.sol'`.
+
+"solhint-plugin-prettier" Integrate Solhint with the "prettier-plugin-solidity" formatter.
+
+```json
+{
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": "error"
+    }
+}
+```
+
+This rule will emit an error for each difference between your code and how prettier-solidity would format it. You can also set it to warning instead of error if you prefer that.
+
+### Hardhat deploy
+
+deploy parameter options:
+
+```js
+export interface DeployOptions = {
+  from: string; // address (or private key) that will perform the transaction. you can use `getNamedAccounts` to retrieve the address you want by name.
+  contract?: // this is an optional field. If not specified it defaults to the contract with the same name as the first parameter
+    | string // this field can be either a string for the name of the contract
+    | { // or abi and bytecode
+        abi: ABI;
+        bytecode: string;
+        deployedBytecode?: string;
+      };
+  args?: any[]; // the list of argument for the constructor (or the upgrade function in case of proxy)
+  skipIfAlreadyDeployed?: boolean; // if set it to true, will not attempt to deploy even if the contract deployed under the same name is different
+  log?: boolean; // if true, it will log the result of the deployment (tx hash, address and gas used)
+  linkedData?: any; // This allow to associate any JSON data to the deployment. Useful for merkle tree data for example
+  libraries?: { [libraryName: string]: Address }; // This let you associate libraries to the deployed contract
+  proxy?: boolean | string | ProxyOptions; // This options allow to consider your contract as a proxy (see below for more details)
+
+  // here some common tx options :
+  gasLimit?: string | number | BigNumber;
+  gasPrice?: string | BigNumber;
+  value?: string | BigNumber;
+  nonce?: string | number | BigNumber;
+
+  estimatedGasLimit?: string | number | BigNumber; // to speed up the estimation, it is possible to provide an upper gasLimit
+  estimateGasExtra?: string | number | BigNumber; // this option allow you to add a gas buffer on top of the estimation
+
+  autoMine?: boolean; // this force a evm_mine to be executed. this is useful to speed deployment on test network that allow to specify a block delay (ganache for example). This option basically skip the delay by force mining.
+  deterministicDeployment? boolean | string; // if true, it will deploy the contract at a deterministic address based on bytecode and constructor arguments. The address will be the same across all network. It use create2 opcode for that, if it is a string, the string will be used as the salt.
+  waitConfirmations?: number; // number of the confirmations to wait after the transactions is included in the chain
+};
+```
+
+### aave
+
+The Aave Protocol is decentralised non-custodial liquidity protocol where users can participate as suppliers, borrowers or liquidators. Suppliers provide liquidity to a market and can earn interest on the crypto assets provided, while borrowers are able to borrow in an overcollateralized fashion. Borrowers can also engage in one-block borrow transactions (”flash loans”), which do not require overcollateralization.
+
+#### Deploy On Multiple Chains
+
+If chainId is X use address Y.
+
+If chainId is Z use address W.
+
+```js
+const chainId = network.config.chainId;
+
+let ethUsdPriceFeedAddress;
+if (chainId == 31337) {
+    const ethUsdAggregator = await deployments.get("MockV3Aggregator");
+    ethUsdPriceFeedAddress = ethUsdAggregator.address;
+} else {
+    ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"];
+}
+```
+
+`helper-hardhat-config`.
+
+```js
+const networkConfig = {
+    31337: {
+        name: "localhost",
+    },
+    // Price Feed Address, values can be obtained at https://docs.chain.link/data-feeds/price-feeds/addresses
+    11155111: {
+        name: "sepolia",
+        ethUsdPriceFeed: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
+    },
+};
+
+const developmentChains = ["hardhat", "localhost"];
+
+module.exports = {
+    networkConfig,
+    developmentChains,
+};
+```
+
+### Mock Contracts
+
+`import "@chainlink/contracts/src/v0.8/tests/MockV3Aggregator.sol";`
+
+```solidity
+constructor(uint8 _decimals, int256 _initialAnswer) {
+    decimals = _decimals;
+    updateAnswer(_initialAnswer);
+}
+```
+
+Mock Contract: `./contracts/test/MockV3Aggregator.sol`
+
+Deploy script:
+
+```js
+const { network } = require("hardhat");
+
+const DECIMALS = "8";
+const INITIAL_PRICE = "200000000000"; // 2000
+module.exports = async ({ getNamedAccounts, deployments }) => {
+    const { deploy, log } = deployments;
+    const { deployer } = await getNamedAccounts();
+    const chainId = network.config.chainId;
+    // If we are on a local development network, we need to deploy mocks!
+    if (chainId == 31337) {
+        log("Local network detected! Deploying mocks...");
+        await deploy("MockV3Aggregator", {
+            contract: "MockV3Aggregator",
+            from: deployer,
+            log: true,
+            args: [DECIMALS, INITIAL_PRICE],
+        });
+        log("Mocks Deployed!");
+        log("------------------------------------------------");
+        log(
+            "You are deploying to a local network, you'll need a local network running to interact"
+        );
+        log(
+            "Please run `npx hardhat console` to interact with the deployed smart contracts!"
+        );
+        log("------------------------------------------------");
+    }
+};
+module.exports.tags = ["all", "mocks"];
+```
+
+#### module.exports.tags
+
+`npx hardhat deploy --tags mocks`
+
+`hardhat-deploy` will know just run deploy script tagged with `mocks`.
+
+#### hre.network.name and hre.deploymentChains
+
+Intro:
+
+-   `hre.network.name` is a property of the Hardhat Runtime Environment (HRE) that returns the name of the network you are connected to.
+
+```js
+if (deploymentChains.includes(hre.network.name)) {
+    // Deploy mocks
+}
+```
+
+#### Exclude test network doing verify
+
+```js
+if (
+    !developmentChains.includes(network.name) &&
+    process.env.ETHERSCAN_API_KEY
+) {
+    await verify(fundMe.address, [ethUsdPriceFeedAddress]);
+}
+```
+
+### hardhat config: networks
+
+These are networks that connect to an external node. Nodes can be running in your computer, like Ganache, or remotely, like Infura or Alchemy.
+
+This kind of network is configured with objects with the following fields:
+
+-   url: The url of the node. This argument is required for custom networks.
+
+-   chainId: An optional number, used to validate the network Hardhat connects to. If not present, this validation is omitted.
+
+-   from: The address to use as default sender. If not present the first account of the node is used.
+
+-   gas: Its value should be "auto" or a number. If a number is used, it will be the gas limit used by default in every transaction. If "auto" is used, the gas limit will be automatically estimated. Default value: "auto".
+
+-   gasPrice: Its value should be "auto" or a number. This parameter behaves like gas. Default value: "auto".
+
+-   gasMultiplier: A number used to multiply the results of gas estimation to give it some slack due to the uncertainty of the estimation process. Default value: 1.
+
+-   accounts: This field controls which accounts Hardhat uses. It can use the node's accounts (by setting it to "remote"), a list of local accounts (by setting it to an array of hex-encoded private keys), or use an HD Wallet. Default value: "remote".
+
+-   httpHeaders: You can use this field to set extra HTTP Headers to be used when making JSON-RPC requests. It accepts a JavaScript object which maps header names to their values. Default value: undefined.
+
+-   timeout: Timeout in ms for requests sent to the JSON-RPC server. If the request takes longer than this, it will be cancelled. Default value: 40000 for the localhost network, 20000 for the rest.
+
+### Solidity Style Guide
+
+Contract elements should be laid out in the following order:
+
+<ol>
+<li>Pragma statements</li>
+<li>Import statements</li>
+<li>Events</li>
+<li>Errors</li>
+<li>Interfaces</li>
+<li>Libraries</li>
+<li>Contracts</li>
+</ol>
+
+Inside each contract, library or interface, use the following order:
+
+<ol>
+<li>Type declarations</li>
+<li>State variables</li>
+<li>Events</li>
+<li>Errors</li>
+<li>Modifiers</li>
+<li>Functions</li>
+</ol>
+
+Functions should be grouped according to their visibility and ordered:
+
+<ol>
+<li>constructor</li>
+<li>receive function (if exists)</li>
+<li>fallback function (if exists)</li>
+<li>external</li>
+<li>public</li>
+<li>internal</li>
+<li>private</li>
+</ol>
+#### NatSpec
+
+NatSpec is a documentation system that is used to describe the functionality of contracts and functions. It is a standard for writing documentation for Solidity code. NatSpec comments are written in a special format that is similar to JSDoc comments in JavaScript.
+
+### Testing with Hardhat
+
+-   by local hardhat network
+-   by forked hardhat network
+
+There are problems when using hardhat-deploy plugin with hardhat network fork. There will be functions not available in the forked network.
+
+**version 6.12.0**
+
+```console
+Error: no matching fragment (operation="fragment", info={ "args": [ null ], "key": "getBalance" }, code=UNSUPPORTED_OPERATION, version=6.12.0)
+```
+
+#### namedAccounts
+
+```json
+namedAccounts: {
+        deployer: {
+            default: 0, // here this will by default take the first account as deployer
+            1: 0, // similarly on mainnet it will take the first account as deployer. Note though that depending on how hardhat network are configured, the account 0 on one network can be different than on another
+        },
+    },
+```
+
+```js
+deployer = (await getNamedAccounts()).deployer;
+```
+
+**Groups tests by function**
+
+### Debugging with Hardhat Network
+
+Solidity `console.log`
+
+When running your contracts and tests on Hardhat Network you can print logging messages and contract variables calling console.log() from your Solidity code. To use it you have to import hardhat/console.sol in your contract code.
+
+This is what it looks like:
+
+```solidity
+pragma solidity ^0.8.0;
+
+import "hardhat/console.sol";
+
+contract Token {
+    //...
+}
+```
+
+Then you can just add some console.log calls to the transfer() function as if you were using it in JavaScript:
+
+```solidity
+function transfer(address to, uint256 amount) external {
+    require(balances[msg.sender] >= amount, "Not enough tokens");
+
+    console.log("Transferring from %s to %s %s tokens", msg.sender, to, amount);
+
+    balances[msg.sender] -= amount;
+    balances[to] += amount;
+
+    emit Transfer(msg.sender, to, amount);
+}
+```
+
+The logging output will show when you run your tests:
+
+`$ npx hardhat test`
+
+```console
+  Token contract
+    Deployment
+      ✓ Should set the right owner
+      ✓ Should assign the total supply of tokens to the owner
+    Transactions
+Transferring from 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 to 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 50 tokens
+Transferring from 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 to 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc 50 tokens
+      ✓ Should transfer tokens between accounts (373ms)
+      ✓ Should fail if sender doesn’t have enough tokens
+Transferring from 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 to 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 50 tokens
+Transferring from 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 to 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc 50 tokens
+      ✓ Should update balances after transfers (187ms)
+
+
+  5 passing (2s)
+```
+
+### Storage
+
+Storage: The Ethereum blockchain stores data in two places: storage and memory. Storage is persistent and expensive, while memory is temporary and cheap.
+
+Each slot in storage is 32 bytes long. This means that each variable in storage occupies a slot, and that the slot is padded to 32 bytes. This is why you can't pack two uint16 variables in the same slot.
+
+When a variable changes, the entire slot is updated. This is why it's important to minimize the number of variables stored in storage.
+
+Constant and immutable variables are stored in the contract code, not in storage. This means that they don't occupy a storage slot.
+
+[Solidity Storage Layout and Slots: A Comprehensive Guide](https://medium.com/@ozorawachie/solidity-storage-layout-and-slots-a-comprehensive-guide-2cee71817ed8)
+
+### Gas Optimization using storage knowledge
+
+Build-info:
+
+opcode intro: Calculated by evm.
+
+Github Copilot:
+
+In Ethereum, opcodes are the low-level instructions that the Ethereum Virtual Machine (EVM) understands and executes. They are part of the bytecode of a smart contract, which is the compiled version of your Solidity code.
+
+Here's a brief introduction to opcodes:
+
+-   **What are opcodes?** Opcodes (short for operation codes) are the fundamental instructions that the EVM executes. Each opcode performs a specific operation, such as adding two numbers, calling a function, or storing data.
+
+-   **How are opcodes used?** When you write a smart contract in Solidity and compile it, the compiler translates your high-level Solidity code into low-level EVM bytecode. This bytecode is a sequence of opcodes.
+
+-   **Why are opcodes important?** Understanding opcodes can help you optimize your smart contracts for gas usage. Each opcode consumes a certain amount of gas when it's executed. By understanding how your Solidity code translates into opcodes, you can make changes to your code to reduce the amount of gas it consumes.
+
+For more detailed information about opcodes and the EVM, you can refer to the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf).
+
+Moonshot:
+
+An opcode, short for operation code, is a single instruction in a low-level programming language, often used in the context of assembly languages and machine code. In the context of Ethereum and smart contract development, opcodes represent the basic operations that can be performed by the Ethereum Virtual Machine (EVM).
+
+Opcodes are the building blocks of smart contract functionality on the Ethereum blockchain. They define how smart contracts execute, interact with each other, and manage data on the blockchain. Some common opcodes include:
+
+1. **STOP**: Halts execution of the smart contract.
+2. **ADD**, **SUB**, **MUL**, **DIV**: Basic arithmetic operations for addition, subtraction, multiplication, and division.
+3. **SLOAD**, **SSTORE**: Load and store data in the smart contract's storage.
+4. **CALL**, **DELEGATECALL**, **STATICCALL**: Interact with other contracts or the same contract in different ways (message call, delegate call, or static call).
+5. **BALANCE**: Get the current balance of the given account.
+6. **SHA3** (now KECCAK256): Compute the Keccak-256 hash of a given piece of data.
+7. **CODECOPY**: Copy code from an address into the contract's memory.
+
+Opcodes are used in Solidity, a high-level programming language for Ethereum smart contracts, which is then compiled down to bytecode that consists of these opcodes. The EVM executes these opcodes to perform the necessary operations as defined by the smart contract.
+
+To provide more context, here's an example of how opcodes are generated from Solidity code:
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract SimpleContract {
+    uint256 public data;
+
+    function setData(uint256 _data) public {
+        data = _data;
+    }
+}
+```
+
+When this contract is compiled, the Solidity compiler generates bytecode consisting of a series of opcodes. For the `setData` function, the opcodes might look something like this:
+
+```
+PUSH1 0x40      // Set stack argument to 0x40 (size of the next following bytes)
+...
+DUP1           // Duplicate the top value on the stack
+...
+SSTORE         // Store the top value in the storage (this sets the value of 'data')
+
+STOP
+```
+
+Each opcode represents a step in the operation of setting a value in the smart contract's storage. When the function is called, the EVM executes these opcodes in sequence, resulting in the desired outcome.
+
+See a table of opcodes and their gas costs [here](https://github.com/crytic/evm-opcodes).
+
+#### For Loop
+
+Using a memory variable to store the length of the array can save gas.
+Read once from storage, not every time in the loop.
+
+```solidity
+function cheaperWithdraw() public onlyOwner {
+    address[] memory funders = s_funders; // read once from storage, not every time in the loop.
+    // mappings can't be in memory, sorry!
+    for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
+        address funder = funders[funderIndex];
+        s_addressToAmountFunded[funder] = 0;
+    }
+    s_funders = new address[](0);
+    // payable(msg.sender).transfer(address(this).balance);
+    (bool success, ) = i_owner.call{ value: address(this).balance }("");
+    require(success);
+}
+```
+
+Compare Max, then average gas cost in gas report.
+
+### Variable Naming Conventions
+
+add prefix:
+
+-   `s_`: storage
+-   `i_`: immutable
+-   `MINIMUM_USD`: constant
+
+### Solidity Chainlink Style Guide
+
+Not adding prefix of storage or immutable.
+Set variables to private, then add a view getter function to access them.
+
+As for gas costs, view functions are free to call, but they can't modify state. This is why we set the variables to private and add a view function to access them.
+
+### Storage Review
+
+-   Use memory variables to store values that are used multiple times in a function.
+-   Use view functions to access state variables.
+-   Use private variables to store state variables.
+-   Use immutable variables for values that are constant across all instances of a contract.
+-   Use constant variables for values that are constant within a contract instance.
+-   Use local variables to store temporary values within a function.
+
+### Staging Test
+
+-   Deploy to testnet
+-   This is the last step before deploying to mainnet
+
+### Write scripts on a local node
+
+`npx hardhat run scripts/deploy.js --network localhost`
