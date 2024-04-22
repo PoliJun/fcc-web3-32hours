@@ -278,6 +278,17 @@ Inside each contract, library or interface, use the following order:
 <li>Functions</li>
 </ol>
 
+Functions should be grouped according to their visibility and ordered:
+
+<ol>
+<li>constructor</li>
+<li>receive function (if exists)</li>
+<li>fallback function (if exists)</li>
+<li>external</li>
+<li>public</li>
+<li>internal</li>
+<li>private</li>
+</ol>
 #### NatSpec
 
 NatSpec is a documentation system that is used to describe the functionality of contracts and functions. It is a standard for writing documentation for Solidity code. NatSpec comments are written in a special format that is similar to JSDoc comments in JavaScript.
@@ -286,6 +297,14 @@ NatSpec is a documentation system that is used to describe the functionality of 
 
 -   by local hardhat network
 -   by forked hardhat network
+
+There are problems when using hardhat-deploy plugin with hardhat network fork. There will be functions not available in the forked network.
+
+**version 6.12.0**
+
+```console
+Error: no matching fragment (operation="fragment", info={ "args": [ null ], "key": "getBalance" }, code=UNSUPPORTED_OPERATION, version=6.12.0)
+```
 
 #### namedAccounts
 
@@ -303,3 +322,173 @@ deployer = (await getNamedAccounts()).deployer;
 ```
 
 **Groups tests by function**
+
+### Debugging with Hardhat Network
+
+Solidity `console.log`
+
+When running your contracts and tests on Hardhat Network you can print logging messages and contract variables calling console.log() from your Solidity code. To use it you have to import hardhat/console.sol in your contract code.
+
+This is what it looks like:
+
+```solidity
+pragma solidity ^0.8.0;
+
+import "hardhat/console.sol";
+
+contract Token {
+    //...
+}
+```
+
+Then you can just add some console.log calls to the transfer() function as if you were using it in JavaScript:
+
+```solidity
+function transfer(address to, uint256 amount) external {
+    require(balances[msg.sender] >= amount, "Not enough tokens");
+
+    console.log("Transferring from %s to %s %s tokens", msg.sender, to, amount);
+
+    balances[msg.sender] -= amount;
+    balances[to] += amount;
+
+    emit Transfer(msg.sender, to, amount);
+}
+```
+
+The logging output will show when you run your tests:
+
+`$ npx hardhat test`
+
+```console
+  Token contract
+    Deployment
+      ✓ Should set the right owner
+      ✓ Should assign the total supply of tokens to the owner
+    Transactions
+Transferring from 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 to 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 50 tokens
+Transferring from 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 to 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc 50 tokens
+      ✓ Should transfer tokens between accounts (373ms)
+      ✓ Should fail if sender doesn’t have enough tokens
+Transferring from 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 to 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 50 tokens
+Transferring from 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 to 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc 50 tokens
+      ✓ Should update balances after transfers (187ms)
+
+
+  5 passing (2s)
+```
+
+### Storage
+
+Storage: The Ethereum blockchain stores data in two places: storage and memory. Storage is persistent and expensive, while memory is temporary and cheap.
+
+Each slot in storage is 32 bytes long. This means that each variable in storage occupies a slot, and that the slot is padded to 32 bytes. This is why you can't pack two uint16 variables in the same slot.
+
+When a variable changes, the entire slot is updated. This is why it's important to minimize the number of variables stored in storage.
+
+Constant and immutable variables are stored in the contract code, not in storage. This means that they don't occupy a storage slot.
+
+[Solidity Storage Layout and Slots: A Comprehensive Guide](https://medium.com/@ozorawachie/solidity-storage-layout-and-slots-a-comprehensive-guide-2cee71817ed8)
+
+### Gas Optimization using storage knowledge
+
+Build-info:
+
+opcode intro: Calculated by evm.
+
+Github Copilot:
+
+In Ethereum, opcodes are the low-level instructions that the Ethereum Virtual Machine (EVM) understands and executes. They are part of the bytecode of a smart contract, which is the compiled version of your Solidity code.
+
+Here's a brief introduction to opcodes:
+
+-   **What are opcodes?** Opcodes (short for operation codes) are the fundamental instructions that the EVM executes. Each opcode performs a specific operation, such as adding two numbers, calling a function, or storing data.
+
+-   **How are opcodes used?** When you write a smart contract in Solidity and compile it, the compiler translates your high-level Solidity code into low-level EVM bytecode. This bytecode is a sequence of opcodes.
+
+-   **Why are opcodes important?** Understanding opcodes can help you optimize your smart contracts for gas usage. Each opcode consumes a certain amount of gas when it's executed. By understanding how your Solidity code translates into opcodes, you can make changes to your code to reduce the amount of gas it consumes.
+
+For more detailed information about opcodes and the EVM, you can refer to the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf).
+
+Moonshot:
+
+An opcode, short for operation code, is a single instruction in a low-level programming language, often used in the context of assembly languages and machine code. In the context of Ethereum and smart contract development, opcodes represent the basic operations that can be performed by the Ethereum Virtual Machine (EVM).
+
+Opcodes are the building blocks of smart contract functionality on the Ethereum blockchain. They define how smart contracts execute, interact with each other, and manage data on the blockchain. Some common opcodes include:
+
+1. **STOP**: Halts execution of the smart contract.
+2. **ADD**, **SUB**, **MUL**, **DIV**: Basic arithmetic operations for addition, subtraction, multiplication, and division.
+3. **SLOAD**, **SSTORE**: Load and store data in the smart contract's storage.
+4. **CALL**, **DELEGATECALL**, **STATICCALL**: Interact with other contracts or the same contract in different ways (message call, delegate call, or static call).
+5. **BALANCE**: Get the current balance of the given account.
+6. **SHA3** (now KECCAK256): Compute the Keccak-256 hash of a given piece of data.
+7. **CODECOPY**: Copy code from an address into the contract's memory.
+
+Opcodes are used in Solidity, a high-level programming language for Ethereum smart contracts, which is then compiled down to bytecode that consists of these opcodes. The EVM executes these opcodes to perform the necessary operations as defined by the smart contract.
+
+To provide more context, here's an example of how opcodes are generated from Solidity code:
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract SimpleContract {
+    uint256 public data;
+
+    function setData(uint256 _data) public {
+        data = _data;
+    }
+}
+```
+
+When this contract is compiled, the Solidity compiler generates bytecode consisting of a series of opcodes. For the `setData` function, the opcodes might look something like this:
+
+```
+PUSH1 0x40      // Set stack argument to 0x40 (size of the next following bytes)
+...
+DUP1           // Duplicate the top value on the stack
+...
+SSTORE         // Store the top value in the storage (this sets the value of 'data')
+
+STOP
+```
+
+Each opcode represents a step in the operation of setting a value in the smart contract's storage. When the function is called, the EVM executes these opcodes in sequence, resulting in the desired outcome.
+
+See a table of opcodes and their gas costs [here](https://github.com/crytic/evm-opcodes).
+
+#### For Loop
+
+Using a memory variable to store the length of the array can save gas.
+Read once from storage, not every time in the loop.
+
+```solidity
+function cheaperWithdraw() public onlyOwner {
+    address[] memory funders = s_funders; // read once from storage, not every time in the loop.
+    // mappings can't be in memory, sorry!
+    for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
+        address funder = funders[funderIndex];
+        s_addressToAmountFunded[funder] = 0;
+    }
+    s_funders = new address[](0);
+    // payable(msg.sender).transfer(address(this).balance);
+    (bool success, ) = i_owner.call{ value: address(this).balance }("");
+    require(success);
+}
+```
+
+Compare Max, then average gas cost in gas report.
+
+### Variable Naming Conventions
+
+add prefix:
+
+-   `s_`: storage
+-   `i_`: immutable
+-   `MINIMUM_USD`: constant
+
+### Solidity Chainlink Style Guide
+
+Not adding prefix of storage or immutable.
+Set variables to private, then add a view getter function to access them.
+
+As for gas costs, view functions are free to call, but they can't modify state. This is why we set the variables to private and add a view function to access them.
