@@ -69,9 +69,9 @@ const { developmentChains } = require("../../helper-hardhat-config");
               it("withdraws ETH from a single funder", async () => {
                   // Arrange
                   const startingFundMeBalance =
-                      await fundMe.provider.getBalance(fundMe.address);
+                      await ethers.provider.getBalance(fundMe.target);
                   const startingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer);
+                      await ethers.provider.getBalance(deployer.address);
 
                   // Act
                   const transactionResponse = await fundMe.withdraw();
@@ -79,11 +79,11 @@ const { developmentChains } = require("../../helper-hardhat-config");
                   const { gasUsed, effectiveGasPrice } = transactionReceipt;
                   const gasCost = gasUsed.mul(effectiveGasPrice);
 
-                  const endingFundMeBalance = await fundMe.provider.getBalance(
+                  const endingFundMeBalance = await ethers.provider.getBalance(
                       fundMe.address,
                   );
                   const endingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer);
+                      await ethers.provider.getBalance(deployer);
 
                   // Assert
                   // Maybe clean up to understand the testing
@@ -107,9 +107,9 @@ const { developmentChains } = require("../../helper-hardhat-config");
                       await fundMeConnectedContract.fund({ value: sendValue });
                   }
                   const startingFundMeBalance =
-                      await fundMe.provider.getBalance(fundMe.address);
+                      await ethers.provider.getBalance(fundMe.address);
                   const startingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer);
+                      await ethers.provider.getBalance(deployer);
 
                   // Act
                   const transactionResponse = await fundMe.cheaperWithdraw();
@@ -121,11 +121,11 @@ const { developmentChains } = require("../../helper-hardhat-config");
                   console.log(`GasCost: ${withdrawGasCost}`);
                   console.log(`GasUsed: ${gasUsed}`);
                   console.log(`GasPrice: ${effectiveGasPrice}`);
-                  const endingFundMeBalance = await fundMe.provider.getBalance(
+                  const endingFundMeBalance = await ethers.provider.getBalance(
                       fundMe.address,
                   );
                   const endingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer);
+                      await ethers.provider.getBalance(deployer);
                   // Assert
                   assert.equal(
                       startingFundMeBalance
