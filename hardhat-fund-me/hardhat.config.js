@@ -4,6 +4,7 @@ require('@typechain/hardhat');
 require('hardhat-gas-reporter');
 require('solidity-coverage');
 require("hardhat-deploy");
+// require("@nomiclabs/hardhat-ethers");
 require("dotenv").config();
 
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || "";
