@@ -24,9 +24,10 @@ contract FunWithStorage {
         i_not_in_storage = 123;
     }
 
-    function doStuff() public {
+    function doStuff() public view returns (uint256) {
         uint256 newVar = favoriteNumber + 1; // SLOAD
-        bool otherVar = someBool; // SLOAD
+        // bool otherVar = someBool; // SLOAD
         // ^^ memory variables
+        return newVar;
     }
 }
