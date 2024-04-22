@@ -8,15 +8,26 @@ const { developmentChains } = require("../../helper-hardhat-config")
           let fundMe
           let mockV3Aggregator
           let deployer
+          let mockV3AggregatorAddress
+          let fundMeAddress
           const sendValue = ethers.utils.parseEther("1")
           beforeEach(async () => {
-              // const accounts = await ethers.getSigners()
-              // deployer = accounts[0]
-              deployer = (await getNamedAccounts()).deployer
+              const accounts = await ethers.getSigners()
+              deployer = accounts[0]
+              //   deployer = (await getNamedAccounts()).deployer
               await deployments.fixture(["all"])
-              fundMe = await ethers.getContract("FundMe", deployer)
-              mockV3Aggregator = await ethers.getContract(
+              fundMeAddress = (await deployments.get("FundMe")).address
+              mockV3AggregatorAddress = await deployments.get(
+                  "MockV3Aggregator"
+              )
+              fundMe = await ethers.getContractAt(
+                  "FundMe",
+                  fundMeAddress,
+                  deployer
+              )
+              mockV3Aggregator = await ethers.getContractAt(
                   "MockV3Aggregator",
+                  mockV3AggregatorAddress.address,
                   deployer
               )
           })
@@ -41,14 +52,14 @@ const { developmentChains } = require("../../helper-hardhat-config")
               it("Updates the amount funded data structure", async () => {
                   await fundMe.fund({ value: sendValue })
                   const response = await fundMe.getAddressToAmountFunded(
-                      deployer
+                      deployer.address
                   )
                   assert.equal(response.toString(), sendValue.toString())
               })
               it("Adds funder to array of funders", async () => {
                   await fundMe.fund({ value: sendValue })
                   const response = await fundMe.getFunder(0)
-                  assert.equal(response, deployer)
+                  assert.equal(response, deployer.address)
               })
           })
           describe("withdraw", function () {
@@ -60,7 +71,7 @@ const { developmentChains } = require("../../helper-hardhat-config")
                   const startingFundMeBalance =
                       await fundMe.provider.getBalance(fundMe.address)
                   const startingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer)
+                      await fundMe.provider.getBalance(deployer.address)
 
                   // Act
                   const transactionResponse = await fundMe.withdraw()
@@ -72,7 +83,7 @@ const { developmentChains } = require("../../helper-hardhat-config")
                       fundMe.address
                   )
                   const endingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer)
+                      await fundMe.provider.getBalance(deployer.address)
 
                   // Assert
                   // Maybe clean up to understand the testing
@@ -98,7 +109,7 @@ const { developmentChains } = require("../../helper-hardhat-config")
                   const startingFundMeBalance =
                       await fundMe.provider.getBalance(fundMe.address)
                   const startingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer)
+                      await fundMe.provider.getBalance(deployer.address)
 
                   // Act
                   const transactionResponse = await fundMe.cheaperWithdraw()
@@ -114,7 +125,7 @@ const { developmentChains } = require("../../helper-hardhat-config")
                       fundMe.address
                   )
                   const endingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer)
+                      await fundMe.provider.getBalance(deployer.address)
                   // Assert
                   assert.equal(
                       startingFundMeBalance
