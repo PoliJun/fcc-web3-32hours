@@ -69,9 +69,9 @@ const { developmentChains } = require("../../helper-hardhat-config");
               it("withdraws ETH from a single funder", async () => {
                   // Arrange
                   const startingFundMeBalance =
-                      await ethers.provider.getBalance(fundMe.target);
+                      await ethers.provider.getBalance(fundMe.address);
                   const startingDeployerBalance =
-                      await ethers.provider.getBalance(deployer.address);
+                      await ethers.provider.getBalance(deployer);
 
                   // Act
                   const transactionResponse = await fundMe.withdraw();
