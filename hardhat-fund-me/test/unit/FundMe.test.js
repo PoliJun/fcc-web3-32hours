@@ -19,12 +19,8 @@ const { developmentChains } = require("../../helper-hardhat-config");
               MockV3AggregatorAddress = Deployments.MockV3Aggregator.address;
               //deploy fundme with ethers
 
-              const fundMeFactory = await ethers.getContractFactory(
-                  "FundMe",
-                  deployer,
-              );
-              let FundMe = await fundMeFactory.deploy(MockV3AggregatorAddress);
-              fundMe = await FundMe.deployed();
+              const fundMeFactory = await ethers.getContractFactory("FundMe");
+              fundMe = await fundMeFactory.deploy(MockV3AggregatorAddress);
 
               //   fundMe = await ethers.getContractAt("FundMe", fundMeAddress, deployer);
               //   mockV3Aggregator = await ethers.getContractAt(
@@ -35,9 +31,7 @@ const { developmentChains } = require("../../helper-hardhat-config");
 
           describe("constructor", function () {
               it("sets the aggregator addresses correctly", async () => {
-                  const response = await fundMe
-                      .connect(deployer)
-                      .getPriceFeed();
+                  const response = await fundMe.getPriceFeed();
                   console.log("************\n" + response + "\n************");
                   assert.equal(response, MockV3AggregatorAddress);
               });
@@ -71,22 +65,23 @@ const { developmentChains } = require("../../helper-hardhat-config");
               });
               it("withdraws ETH from a single funder", async () => {
                   // Arrange
-                  const startingFundMeBalance =
-                      await fundMe.provider.getBalance(fundMe.address);
+                  const startingFundMeBalance = await fundMe.getBalance(
+                      fundMe.address,
+                  );
                   const startingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer);
+                      await fundMe.getBalance(deployer);
 
                   // Act
-                  const transactionResponse = await fundMe.withdraw();
+                  const transactionResponse = await fundMe.connect(deployer).withdraw();
                   const transactionReceipt = await transactionResponse.wait();
                   const { gasUsed, effectiveGasPrice } = transactionReceipt;
                   const gasCost = gasUsed.mul(effectiveGasPrice);
 
-                  const endingFundMeBalance = await fundMe.provider.getBalance(
+                  const endingFundMeBalance = await fundMe.getBalance(
                       fundMe.address,
                   );
                   const endingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer);
+                      await fundMe.getBalance(deployer);
 
                   // Assert
                   // Maybe clean up to understand the testing
@@ -109,10 +104,11 @@ const { developmentChains } = require("../../helper-hardhat-config");
                       );
                       await fundMeConnectedContract.fund({ value: sendValue });
                   }
-                  const startingFundMeBalance =
-                      await fundMe.provider.getBalance(fundMe.address);
+                  const startingFundMeBalance = await fundMe.getBalance(
+                      fundMe.address,
+                  );
                   const startingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer);
+                      await fundMe.getBalance(deployer);
 
                   // Act
                   const transactionResponse = await fundMe.cheaperWithdraw();
@@ -124,11 +120,11 @@ const { developmentChains } = require("../../helper-hardhat-config");
                   console.log(`GasCost: ${withdrawGasCost}`);
                   console.log(`GasUsed: ${gasUsed}`);
                   console.log(`GasPrice: ${effectiveGasPrice}`);
-                  const endingFundMeBalance = await fundMe.provider.getBalance(
+                  const endingFundMeBalance = await fundMe.getBalance(
                       fundMe.address,
                   );
                   const endingDeployerBalance =
-                      await fundMe.provider.getBalance(deployer);
+                      await fundMe.getBalance(deployer);
                   // Assert
                   assert.equal(
                       startingFundMeBalance
@@ -150,11 +146,11 @@ const { developmentChains } = require("../../helper-hardhat-config");
               });
               it("Only allows the owner to withdraw", async function () {
                   const accounts = await ethers.getSigners();
-                  const fundMeConnectedContract = await fundMe.connect(
-                      accounts[1],
-                  );
+                //   const fundMeConnectedContract = await fundMe.connect(
+                //       accounts[0],
+                //   );
                   await expect(
-                      fundMeConnectedContract.withdraw(),
+                      fundMe.connect(deployer).withdraw(),
                   ).to.be.revertedWith("FundMe__NotOwner");
               });
           });
