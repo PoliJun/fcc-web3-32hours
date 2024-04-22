@@ -492,3 +492,21 @@ Not adding prefix of storage or immutable.
 Set variables to private, then add a view getter function to access them.
 
 As for gas costs, view functions are free to call, but they can't modify state. This is why we set the variables to private and add a view function to access them.
+
+### Storage Review
+
+-   Use memory variables to store values that are used multiple times in a function.
+-   Use view functions to access state variables.
+-   Use private variables to store state variables.
+-   Use immutable variables for values that are constant across all instances of a contract.
+-   Use constant variables for values that are constant within a contract instance.
+-   Use local variables to store temporary values within a function.
+
+### Staging Test
+
+-   Deploy to testnet
+-   This is the last step before deploying to mainnet
+
+### Write scripts on a local node
+
+`npx hardhat run scripts/deploy.js --network localhost`
