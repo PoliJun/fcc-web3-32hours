@@ -135,4 +135,25 @@ eventEmitterable.once("block", (blockNumber) => {
 
 ### Input Forms
 
+```js
+const ethAmount = document.getElementById("ethAmount").value
+```
 
+### Reading From the Blockchain
+
+```js
+const balance = await ethers.provider.getBalance(address)
+```
+
+### Recap
+
+-   Connect to MetaMask
+-   Send transactions
+-   Listen for events
+-   Read from the blockchain
+-   Use input forms
+-   Use the `window` object
+-   Use the `ethereum` object
+-   Use the `ethers` object
+-   Use the `provider` object
+-   Use the `signer` object
